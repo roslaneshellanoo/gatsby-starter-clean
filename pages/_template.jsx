@@ -1,57 +1,51 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+import Helmet from 'react-helmet'
+import { config } from 'config'
 import { Container } from 'react-responsive-grid'
 import { Link } from 'react-router'
 import { prefixLink } from 'gatsby-helpers'
-import Headroom from 'react-headroom'
+import injectTapEventPlugin from 'react-tap-event-plugin';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import Header from '../components/Header'
+
+injectTapEventPlugin()
+
 import '../css/markdown-styles'
 
 import { rhythm } from '../utils/typography'
 
-module.exports = React.createClass({
-  propTypes () {
-    return {
-      children: React.PropTypes.any,
+class Template extends React.Component {
+
+    render () {
+        return (
+        <MuiThemeProvider>
+            <div>
+                <Helmet
+                    title={config.siteTitle}
+                    meta={[
+                        { name: "description", content: "Sample" },
+                        { name: "keywords", content: "sample, something" },
+                    ]}
+                />
+                <Header />
+                <Container
+                    style={{
+                        maxWidth: 960,
+                        padding: `${rhythm(1)} ${rhythm(3/4)}`,
+                    }}
+                >
+                    {this.props.children}
+                </Container>
+            </div>
+        </MuiThemeProvider>
+
+        )
     }
-  },
-  render () {
-    return (
-      <div>
-        <Headroom
-          wrapperStyle={{
-            marginBottom: rhythm(1),
-          }}
-          style={{
-            background: '#252525'
-          }}
-        >
-          <Container
-            style={{
-              maxWidth: 960,
-              paddingTop: 0,
-              padding: `${rhythm(1)} ${rhythm(3/4)}`,
-            }}
-          >
-            <Link
-              to={prefixLink('/')}
-              style={{
-                color: 'white',
-                textDecoration: 'none',
-              }}
-            >
-              Your Brand!
-            </Link>
-          </Container>
-        </Headroom>
-        <Container
-          style={{
-            maxWidth: 960,
-            padding: `${rhythm(1)} ${rhythm(3/4)}`,
-            paddingTop: 0,
-          }}
-        >
-          {this.props.children}
-        </Container>
-      </div>
-    )
-  },
-})
+}
+
+Template.propTypes = {
+    children: PropTypes.any
+}
+
+export default Template
