@@ -3,6 +3,7 @@ import { Link } from 'react-router'
 import { prefixLink } from 'gatsby-helpers'
 import { config } from 'config'
 import {Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle} from 'material-ui/Toolbar'
+import FlatButton from 'material-ui/FlatButton'
 
 const style ={
     toolbar: {
@@ -26,8 +27,13 @@ export default class Header extends React.Component {
                     <ToolbarTitle text="Quizio.io" />
                 </ToolbarGroup>
                 <ToolbarGroup>
+                    <FlatButton
+                        containerElement={<Link to="/about/" />}
+                        label={'About'}
+                    />
                     <Link to={prefixLink('/about/')}>About</Link>
-                    <ToolbarTitle text="Quizes" />
+                    <Link to={prefixLink('/quizes/')}>quizes</Link>
+                    <Link to={prefixLink('/quizes/javascript/')}>javascript</Link>
                     <ToolbarTitle text="Options" />
                 </ToolbarGroup>
             </Toolbar>
