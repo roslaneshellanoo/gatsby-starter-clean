@@ -9,6 +9,9 @@ const style ={
     toolbar: {
         backgroundColor: '#ffffff',
         boxShadow: 'rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px'
+    },
+    link: {
+        margin: '10px 24px'
     }
 }
 export default class Header extends React.Component {
@@ -28,13 +31,17 @@ export default class Header extends React.Component {
                 </ToolbarGroup>
                 <ToolbarGroup>
                     <FlatButton
-                        containerElement={<Link to="/about/" />}
+                        containerElement={<Link style={style.margin} to="/about/" />}
                         label={'About'}
                     />
-                    <Link to={prefixLink('/about/')}>About</Link>
-                    <Link to={prefixLink('/quizes/')}>quizes</Link>
-                    <Link to={prefixLink('/quizes/javascript/')}>javascript</Link>
-                    <ToolbarTitle text="Options" />
+                    <FlatButton
+                        containerElement={<Link to="/quizes/" />}
+                        label={'Quizes'}
+                    />
+                    <FlatButton
+                        containerElement={<Link to="/quizes/javascript/" />}
+                        label={'Javascript'}
+                    />
                 </ToolbarGroup>
             </Toolbar>
         );
