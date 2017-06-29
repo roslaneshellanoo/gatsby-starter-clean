@@ -62,7 +62,7 @@ const quiz = {
                     mark: true
                 }
             ],
-            answer: 4
+            answer: 3
 
         },
 
@@ -92,7 +92,7 @@ const quiz = {
                     mark: false
                 }
             ],
-            answer: 2
+            answer: 1
 
 
         },
