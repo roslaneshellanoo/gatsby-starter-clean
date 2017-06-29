@@ -11,7 +11,7 @@ const style ={
         boxShadow: 'rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px'
     },
     link: {
-        margin: '10px 24px'
+        margin: '10px 15px'
     }
 }
 export default class Header extends React.Component {
@@ -31,15 +31,18 @@ export default class Header extends React.Component {
                 </ToolbarGroup>
                 <ToolbarGroup>
                     <FlatButton
-                        containerElement={<Link style={style.margin} to="/about/" />}
+                        style={style.link}
+                        containerElement={<Link to="/about/" />}
                         label={'About'}
                     />
                     <FlatButton
-                        containerElement={<Link to="/quizes/" />}
+                        style={style.link}
+                        containerElement={<Link style={style.link} to="/quizes/" />}
                         label={'Quizes'}
                     />
                     <FlatButton
-                        containerElement={<Link to="/quizes/javascript/" />}
+                        style={style.link}
+                        containerElement={<Link style={style.link} to="/quizes/javascript/" />}
                         label={'Javascript'}
                     />
                 </ToolbarGroup>
