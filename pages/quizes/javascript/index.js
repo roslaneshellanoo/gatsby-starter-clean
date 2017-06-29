@@ -26,6 +26,17 @@ export default class JavascriptQuiz extends React.Component {
             questionIndex: this.state.questionIndex + 1,
             activeStep: this.state.activeStep + 1
         })
+
+        let quizObj = this.state.quiz
+        this.state.userResponses.forEach( (value, i) => {
+            let rightAnswer = quizObj.questions[i].answer
+            if (rightAnswer === value) {
+                this.setState({
+                    score: this.state.score + 1
+                })
+            }
+        })
+
     }
 
     handlePrev() {
@@ -45,13 +56,13 @@ export default class JavascriptQuiz extends React.Component {
     score = () => {
         let rightAnswers = 0
         let quizObj = this.state.quiz
-        this.state.userResponses.forEach( (value, index) => {
+        this.state.userResponses.map( (value, index) => {
             if (quizObj.questions[index].answer === value) {
-                this.setState({
-                    score: rightAnswers + 1
-                })
                 return rightAnswers + 1
             }
+        })
+        this.setState({
+            score: rightAnswers + 1
         })
         return rightAnswers
 
@@ -89,7 +100,7 @@ export default class JavascriptQuiz extends React.Component {
                         <button onClick={this.handleNext}>{'Click here'}</button>
                     </div>
 
-                    <div>my score is {() => this.score()}</div>
+                    <div>my score is {this.state.score}</div>
                 </div>
             </div>
         )
