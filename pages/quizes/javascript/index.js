@@ -1,8 +1,20 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import {prefixLink} from "gatsby-helpers";
 import Helmet from "react-helmet";
 import {config} from "config";
 import quiz from "../../../components/Questions";
+import {List, ListItem, makeSelectable} from 'material-ui/List'
+import Subheader from 'material-ui/Subheader';
+import Divider from 'material-ui/Divider';
+import Checkbox from 'material-ui/Checkbox';
+
+const styles = {
+    root: {
+        display: 'flex',
+        flexWrap: 'wrap',
+    },
+};
 
 export default class JavascriptQuiz extends React.Component {
     constructor(props) {
@@ -22,19 +34,15 @@ export default class JavascriptQuiz extends React.Component {
     }
 
     handleNext = () => {
+
+        let quizObj = this.state.quiz
+        let quizIndex = this.state.questionIndex
+        if (this.state.userResponses[quizIndex] === quizObj.questions[quizIndex].answer) {
+            this.setState({score: this.state.score + 1})
+        }
         this.setState({
             questionIndex: this.state.questionIndex + 1,
             activeStep: this.state.activeStep + 1
-        })
-
-        let quizObj = this.state.quiz
-        this.state.userResponses.forEach( (value, i) => {
-            let rightAnswer = quizObj.questions[i].answer
-            if (rightAnswer === value) {
-                this.setState({
-                    score: this.state.score + 1
-                })
-            }
         })
 
     }
@@ -53,20 +61,14 @@ export default class JavascriptQuiz extends React.Component {
         })
     }
 
-    score = () => {
-        let rightAnswers = 0
-        let quizObj = this.state.quiz
-        this.state.userResponses.map( (value, index) => {
-            if (quizObj.questions[index].answer === value) {
-                return rightAnswers + 1
-            }
-        })
-        this.setState({
-            score: rightAnswers + 1
-        })
-        return rightAnswers
-
-    }
+    // score = () => {
+    //     let quizObj = this.state.quiz
+    //     let quizIndex = this.state.questionIndex
+    //     if (this.state.userResponses[quizIndex] === quizObj.questions[quizIndex].answer) {
+    //         this.setState({score: this.state.score + 1})
+    //     }
+    //
+    // }
 
     render() {
 
@@ -84,12 +86,15 @@ export default class JavascriptQuiz extends React.Component {
                                     <div key={index}>
 
                                         <div key={index}>{question.text}</div>
-                                        <div className='wrap-answers'>
+                                        <List className='wrap-answers'>
                                             {question.responses.map((response, index) =>
-                                                <div onClick={() => this.clickedAnswer(index, response.text)}
-                                                     key={index}>{index + 1}. {response.text}</div>
+                                                <ListItem
+                                                onTouchTap={() => this.clickedAnswer(index, response.text)}
+                                                key={index}
+                                                primaryText={response.text}
+                                                />
                                             )}
-                                        </div>
+                                        </List>
                                     </div>
                                 )
                             }
@@ -101,6 +106,21 @@ export default class JavascriptQuiz extends React.Component {
                     </div>
 
                     <div>my score is {this.state.score}</div>
+                    <div>my score is {() => this.score}</div>
+                    <div>
+                        <Divider />
+                        <List>
+                            <ListItem
+                                primaryText="Notifications"
+                            />
+                            <ListItem
+                                primaryText="Sounds"
+                            />
+                            <ListItem
+                                primaryText="Video sounds"
+                            />
+                        </List>
+                    </div>
                 </div>
             </div>
         )

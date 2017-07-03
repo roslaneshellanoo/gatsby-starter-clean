@@ -43,22 +43,22 @@ const quiz = {
 
                 {
                     text: 'for',
-                    id: 1,
+                    id: 0,
                     mark: false
                 },
                 {
                     text: 'foo',
-                    id: 2,
+                    id: 1,
                     mark: false
                 },
                 {
                     text: 'bar',
-                    id: 3,
+                    id: 2,
                     mark: false
                 },
                 {
                     text: 'var',
-                    id: 4,
+                    id: 3,
                     mark: true
                 }
             ],
@@ -73,22 +73,22 @@ const quiz = {
 
                 {
                     text: '$This_is_string',
-                    id: 1,
+                    id: 0,
                     mark: false
                 },
                 {
                     text: `"This is string"`,
-                    id: 2,
+                    id: 1,
                     mark: true
                 },
                 {
                     text: 'this is string...',
-                    id: 3,
+                    id: 2,
                     mark: false
                 },
                 {
                     text: '@this is string',
-                    id: 4,
+                    id: 3,
                     mark: false
                 }
             ],
@@ -104,26 +104,26 @@ const quiz = {
 
                 {
                     text: 'Wrong, too bad.',
-                    id: 1,
+                    id: 0,
                     mark: false
                 },
                 {
                     text: 'Right2',
-                    id: 2,
+                    id: 1,
                     mark: true
+                },
+                {
+                    text: 'Wrong, too bad.',
+                    id: 2,
+                    mark: false
                 },
                 {
                     text: 'Wrong, too bad.',
                     id: 3,
                     mark: false
-                },
-                {
-                    text: 'Wrong, too bad.',
-                    id: 4,
-                    mark: false
                 }
             ],
-            answer: 2
+            answer: 1
 
 
         },
@@ -134,26 +134,26 @@ const quiz = {
 
                 {
                     text: 'Wrong, too bad.',
-                    id: 1,
+                    id: 0,
                     mark: false
                 },
                 {
                     text: 'Right2',
-                    id: 2,
+                    id: 1,
                     mark: true
+                },
+                {
+                    text: 'Wrong, too bad.',
+                    id: 2,
+                    mark: false
                 },
                 {
                     text: 'Wrong, too bad.',
                     id: 3,
                     mark: false
-                },
-                {
-                    text: 'Wrong, too bad.',
-                    id: 4,
-                    mark: false
                 }
             ],
-            answer: 2
+            answer: 1
 
 
         }
