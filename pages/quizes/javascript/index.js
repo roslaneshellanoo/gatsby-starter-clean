@@ -5,9 +5,8 @@ import Helmet from "react-helmet";
 import {config} from "config";
 import quiz from "../../../components/Questions";
 import {List, ListItem, makeSelectable} from 'material-ui/List'
-import Subheader from 'material-ui/Subheader';
 import Divider from 'material-ui/Divider';
-import Checkbox from 'material-ui/Checkbox';
+import Subheader from 'material-ui/Subheader';
 
 const styles = {
     root: {
@@ -15,6 +14,42 @@ const styles = {
         flexWrap: 'wrap',
     },
 };
+
+let SelectableList = makeSelectable(List);
+
+function wrapState(ComposedComponent) {
+    return class SelectableList extends React.Component {
+        static propTypes = {
+            children: PropTypes.node.isRequired,
+            defaultValue: PropTypes.number,
+        };
+
+        componentWillMount() {
+            this.setState({
+                selectedIndex: this.props.defaultValue,
+            });
+        }
+
+        handleRequestChange = (event, index) => {
+            this.setState({
+                selectedIndex: index,
+            });
+        };
+
+        render() {
+            return (
+                <ComposedComponent
+                    value={this.state.selectedIndex}
+                    onChange={this.handleRequestChange}
+                >
+                    {this.props.children}
+                </ComposedComponent>
+            );
+        }
+    };
+}
+
+SelectableList = wrapState(SelectableList);
 
 export default class JavascriptQuiz extends React.Component {
     constructor(props) {
@@ -86,15 +121,16 @@ export default class JavascriptQuiz extends React.Component {
                                     <div key={index}>
 
                                         <div key={index}>{question.text}</div>
-                                        <List className='wrap-answers'>
+                                        <SelectableList className='wrap-answers'>
                                             {question.responses.map((response, index) =>
                                                 <ListItem
+                                                    value={index}
                                                 onTouchTap={() => this.clickedAnswer(index, response.text)}
                                                 key={index}
                                                 primaryText={response.text}
                                                 />
                                             )}
-                                        </List>
+                                        </SelectableList>
                                     </div>
                                 )
                             }
@@ -107,20 +143,6 @@ export default class JavascriptQuiz extends React.Component {
 
                     <div>my score is {this.state.score}</div>
                     <div>my score is {() => this.score}</div>
-                    <div>
-                        <Divider />
-                        <List>
-                            <ListItem
-                                primaryText="Notifications"
-                            />
-                            <ListItem
-                                primaryText="Sounds"
-                            />
-                            <ListItem
-                                primaryText="Video sounds"
-                            />
-                        </List>
-                    </div>
                 </div>
             </div>
         )
