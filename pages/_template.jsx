@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { config } from 'config'
 import { Container } from 'react-responsive-grid'
-import { Link } from 'react-router'
+// import { Link } from 'react-router'
 import { prefixLink } from 'gatsby-helpers'
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'

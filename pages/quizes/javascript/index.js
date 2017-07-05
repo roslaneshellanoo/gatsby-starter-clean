@@ -118,7 +118,7 @@ export default class JavascriptQuiz extends React.Component {
         if (this.state.questionIndex >= this.state.quizLength ) {
             return (
                 <div>
-                    <div>My score is {this.state.score}</div>
+                    <div>My score is {this.state.quizLength}/{this.state.score}</div>
                     <RaisedButton onTouchTap={this.restart} label="Restart" />
                 </div>
             )
