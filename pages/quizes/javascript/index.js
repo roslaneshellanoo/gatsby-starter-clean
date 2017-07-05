@@ -4,9 +4,12 @@ import {prefixLink} from "gatsby-helpers";
 import Helmet from "react-helmet";
 import {config} from "config";
 import quiz from "../../../components/Questions";
-import {List, ListItem, makeSelectable} from 'material-ui/List'
+import {List, ListItem, makeSelectable} from 'material-ui/List';
 import Divider from 'material-ui/Divider';
 import Subheader from 'material-ui/Subheader';
+import Avatar from 'material-ui/Avatar';
+import {pinkA200, transparent} from 'material-ui/styles/colors';
+import RaisedButton from 'material-ui/RaisedButton';
 
 const styles = {
     root: {
@@ -128,9 +131,18 @@ export default class JavascriptQuiz extends React.Component {
                                                 onTouchTap={() => this.clickedAnswer(index, response.text)}
                                                 key={index}
                                                 primaryText={response.text}
+                                                    leftAvatar={
+                                                        <Avatar
+                                                            color={'red'} backgroundColor={transparent}
+                                                            style={{left: 8}}
+                                                        >
+                                                            {index+1+'.'}
+                                                        </Avatar>
+                                                    }
                                                 />
                                             )}
                                         </SelectableList>
+
                                     </div>
                                 )
                             }
@@ -138,7 +150,7 @@ export default class JavascriptQuiz extends React.Component {
                         })}
                     </div>
                     <div>
-                        <button onClick={this.handleNext}>{'Click here'}</button>
+                        <RaisedButton onTouchTap={this.handleNext} label="Next" primary />
                     </div>
 
                     <div>my score is {this.state.score}</div>
