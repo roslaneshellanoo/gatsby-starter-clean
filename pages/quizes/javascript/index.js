@@ -1,15 +1,14 @@
 import React from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 import {prefixLink} from "gatsby-helpers";
 import Helmet from "react-helmet";
 import {config} from "config";
 import quiz from "../../../components/Questions";
-import {List, ListItem, makeSelectable} from 'material-ui/List';
-import Divider from 'material-ui/Divider';
-import Subheader from 'material-ui/Subheader';
-import Avatar from 'material-ui/Avatar';
-import {pinkA200, transparent} from 'material-ui/styles/colors';
-import RaisedButton from 'material-ui/RaisedButton';
+import {List, ListItem, makeSelectable} from "material-ui/List";
+import Divider from "material-ui/Divider";
+import Avatar from "material-ui/Avatar";
+import {pinkA200, transparent} from "material-ui/styles/colors";
+import RaisedButton from "material-ui/RaisedButton";
 
 const styles = {
     root: {
@@ -65,7 +64,7 @@ export default class JavascriptQuiz extends React.Component {
             }),
             activeStep: 1,
             questionIndex: 0,
-            userResponses: new Array(quiz.questions.length).fill(''),
+            userResponses: new Array(quiz.questions.length).fill(null),
             score: 0
         }
 
@@ -75,14 +74,16 @@ export default class JavascriptQuiz extends React.Component {
 
         let quizObj = this.state.quiz
         let quizIndex = this.state.questionIndex
-        if (this.state.userResponses[quizIndex] === quizObj.questions[quizIndex].answer) {
+        let responses = this.state.userResponses
+        if (responses[quizIndex] === quizObj.questions[quizIndex].answer) {
             this.setState({score: this.state.score + 1})
         }
-        this.setState({
-            questionIndex: this.state.questionIndex + 1,
-            activeStep: this.state.activeStep + 1
-        })
-
+        if (responses[quizIndex] !== null) {
+            this.setState({
+                questionIndex: this.state.questionIndex + 1,
+                activeStep: this.state.activeStep + 1
+            })
+        }
     }
 
     handlePrev() {
@@ -99,14 +100,30 @@ export default class JavascriptQuiz extends React.Component {
         })
     }
 
-    // score = () => {
-    //     let quizObj = this.state.quiz
-    //     let quizIndex = this.state.questionIndex
-    //     if (this.state.userResponses[quizIndex] === quizObj.questions[quizIndex].answer) {
-    //         this.setState({score: this.state.score + 1})
-    //     }
-    //
-    // }
+    restart = (e) => {
+        this.setState({
+            quiz: quiz,
+            quizLength: quiz.questions.length,
+            steps: quiz.questions.map(function (v, i) {
+                return i + 1
+            }),
+            activeStep: 1,
+            questionIndex: 0,
+            userResponses: new Array(quiz.questions.length).fill(null),
+            score: 0
+        })
+    }
+
+    finalScore = () => {
+        if (this.state.questionIndex >= this.state.quizLength ) {
+            return (
+                <div>
+                    <div>My score is {this.state.score}</div>
+                    <RaisedButton onTouchTap={this.restart} label="Restart" />
+                </div>
+            )
+        }
+    }
 
     render() {
 
@@ -128,15 +145,15 @@ export default class JavascriptQuiz extends React.Component {
                                             {question.responses.map((response, index) =>
                                                 <ListItem
                                                     value={index}
-                                                onTouchTap={() => this.clickedAnswer(index, response.text)}
-                                                key={index}
-                                                primaryText={response.text}
+                                                    onTouchTap={() => this.clickedAnswer(index, response.text)}
+                                                    key={index}
+                                                    primaryText={response.text}
                                                     leftAvatar={
                                                         <Avatar
                                                             color={'red'} backgroundColor={transparent}
                                                             style={{left: 8}}
                                                         >
-                                                            {index+1+'.'}
+                                                            {index + 1 + '.'}
                                                         </Avatar>
                                                     }
                                                 />
@@ -150,11 +167,17 @@ export default class JavascriptQuiz extends React.Component {
                         })}
                     </div>
                     <div>
-                        <RaisedButton onTouchTap={this.handleNext} label="Next" primary />
+                        { this.state.questionIndex < this.state.quizLength  ?
+                            <RaisedButton onTouchTap={this.handleNext} label="Next" primary/> :
+                            null
+                        }
+                        <br />
+                        <br />
                     </div>
+                    <Divider />
 
-                    <div>my score is {this.state.score}</div>
-                    <div>my score is {() => this.score}</div>
+                    {this.finalScore()}
+
                 </div>
             </div>
         )
