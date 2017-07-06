@@ -8,6 +8,7 @@ import { prefixLink } from 'gatsby-helpers'
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import Header from '../components/Header'
+import Banner from '../components/Banner'
 
 injectTapEventPlugin()
 
@@ -18,6 +19,10 @@ import { rhythm } from '../utils/typography'
 class Template extends React.Component {
 
     render () {
+        // if (location.pathname === prefixLink('/')) {
+        //     return <Banner />
+        // }
+        const { location, children } = this.props
         return (
         <MuiThemeProvider>
             <div>
@@ -29,13 +34,14 @@ class Template extends React.Component {
                     ]}
                 />
                 <Header />
+                {location.pathname === prefixLink('/') ?  <Banner /> : null}
                 <Container
                     style={{
                         maxWidth: 960,
                         padding: `${rhythm(1)} ${rhythm(3/4)}`,
                     }}
                 >
-                    {this.props.children}
+                    {children}
                 </Container>
             </div>
         </MuiThemeProvider>
@@ -45,7 +51,8 @@ class Template extends React.Component {
 }
 
 Template.propTypes = {
-    children: PropTypes.any
+    children: PropTypes.any,
+    location: React.PropTypes.object
 }
 
 export default Template

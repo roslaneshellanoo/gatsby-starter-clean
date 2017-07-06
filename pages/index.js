@@ -2,16 +2,11 @@ import React from 'react'
 import { Link } from 'react-router'
 import { prefixLink } from 'gatsby-helpers'
 import { config } from 'config'
-import mainBanner from '../assets/cosmos.jpg'
 
 export default class Index extends React.Component {
     render() {
         return (
             <div>
-                <h1>
-                    Hi people
-                </h1>
-                <img src={mainBanner} alt=""/>
                 <p>Welcome to your new Gatsby site.</p>
                 <p>Now go build something great.</p>
                 <Link to={prefixLink('/about/')}>Go to page 2</Link>
