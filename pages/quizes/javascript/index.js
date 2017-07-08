@@ -9,6 +9,7 @@ import Divider from "material-ui/Divider";
 import Avatar from "material-ui/Avatar";
 import {pinkA200, transparent} from "material-ui/styles/colors";
 import RaisedButton from "material-ui/RaisedButton";
+import base from '../../../utils/firebase'
 
 const styles = {
     root: {
@@ -57,17 +58,26 @@ export default class JavascriptQuiz extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            quiz: quiz,
-            quizLength: quiz.questions.length,
-            steps: quiz.questions.map(function (v, i) {
-                return i + 1
-            }),
+            quiz: [],
+            quizLength: null,
             activeStep: 1,
             questionIndex: 0,
-            userResponses: new Array(quiz.questions.length).fill(null),
+            userResponses: new Array(quiz.length).fill(null),
             score: 0
         }
 
+    }
+
+    componentDidMount() {
+        this.ref = base.syncState('quiz', {
+            context: this,
+            state: 'quiz',
+            asArray: true,
+            then (er) {
+                console.log(er)
+                this.setState({quizLength: quiz.length})
+            }
+        })
     }
 
     handleNext = () => {
@@ -103,23 +113,23 @@ export default class JavascriptQuiz extends React.Component {
     restart = (e) => {
         this.setState({
             quiz: quiz,
-            quizLength: quiz.questions.length,
-            steps: quiz.questions.map(function (v, i) {
+            quizLength: quiz.length,
+            steps: quiz.map(function (v, i) {
                 return i + 1
             }),
             activeStep: 1,
             questionIndex: 0,
-            userResponses: new Array(quiz.questions.length).fill(null),
+            userResponses: new Array(quiz.length).fill(null),
             score: 0
         })
     }
 
     finalScore = () => {
-        if (this.state.questionIndex >= this.state.quizLength ) {
+        if (this.state.questionIndex >= this.state.quizLength) {
             return (
                 <div>
                     <div>My score is {this.state.quizLength}/{this.state.score}</div>
-                    <RaisedButton onTouchTap={this.restart} label="Restart" />
+                    <RaisedButton onTouchTap={this.restart} label="Restart"/>
                 </div>
             )
         }
@@ -135,19 +145,19 @@ export default class JavascriptQuiz extends React.Component {
                 </h1>
                 <div className='wrap-quiz'>
                     <div className='wrap-questions'>
-                        {this.state.quiz.questions.map((question, index) => {
+                        {this.state.quiz.map((question, index) => {
                             if (index === this.state.questionIndex) {
                                 return (
                                     <div key={index}>
 
-                                        <div key={index}>{question.text}</div>
+                                        <div key={index}>{question.question}</div>
                                         <SelectableList className='wrap-answers'>
-                                            {question.responses.map((response, index) =>
+                                            {question.answers.map((response, index) =>
                                                 <ListItem
                                                     value={index}
-                                                    onTouchTap={() => this.clickedAnswer(index, response.text)}
+                                                    onTouchTap={() => this.clickedAnswer(index, response)}
                                                     key={index}
-                                                    primaryText={response.text}
+                                                    primaryText={response}
                                                     leftAvatar={
                                                         <Avatar
                                                             color={'red'} backgroundColor={transparent}
@@ -167,7 +177,7 @@ export default class JavascriptQuiz extends React.Component {
                         })}
                     </div>
                     <div>
-                        { this.state.questionIndex < this.state.quizLength  ?
+                        { this.state.questionIndex < this.state.quizLength ?
                             <RaisedButton onTouchTap={this.handleNext} label="Next" primary/> :
                             null
                         }
