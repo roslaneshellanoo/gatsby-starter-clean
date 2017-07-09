@@ -18,15 +18,7 @@ class About extends React.Component {
         }
     }
 
-    handleChange = (event, name) => {
-        let value = event.target.value;
-        let name2 = event.target.name
-        let obj = {}
-        obj[name2] = value
-        return this.setState(obj)
-    }
-
-    handleChange2 = (event) => {
+    handleChange = (event) => {
         let value = event.target.value;
         let name = event.target.name
         let obj = {}
@@ -49,26 +41,31 @@ class About extends React.Component {
                     rangeValue={this.state.firstRange}
                     rangeName='firstRange'
                     step={this.state.step}
-                    handleChange={this.handleChange2} />
+                    handleChange={this.handleChange} />
                 <RangeSlider
                     minValue='0'
                     maxValue='100'
                     rangeValue={this.state.secondRange}
                     rangeName='secondRange'
                     step={this.state.step}
-                    handleChange={this.handleChange2} />
+                    handleChange={this.handleChange} />
                 <RangeSlider
                     minValue='0'
                     maxValue='100'
                     rangeValue={this.state.thirdRange}
                     rangeName='thirdRange'
                     step={this.state.step}
-                    handleChange={this.handleChange2} />
+                    handleChange={this.handleChange} />
 
 
 
                 <br/>
                 <br/>
+                <h1>Total sum :
+                    {parseInt(this.state.firstRange) +
+                    parseInt(this.state.secondRange) +
+                    parseInt(this.state.thirdRange)}
+                    </h1>
                 <br/>
                 <br/>
                 <p>Welcome to page 2</p>
