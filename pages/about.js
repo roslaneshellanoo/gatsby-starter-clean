@@ -5,9 +5,6 @@ import {prefixLink} from "gatsby-helpers";
 import {config} from "config";
 import RangeSlider from '../components/rangeSlider'
 
-import base from "../utils/firebase";
-
-
 class About extends React.Component {
     constructor(props) {
         super(props)
@@ -16,12 +13,9 @@ class About extends React.Component {
             maxValue: 100,
             step: 5,
             firstRange: 50,
-            secondRange: 50
+            secondRange: 50,
+            thirdRange: 50
         }
-    }
-
-    componentDidMount() {
-
     }
 
     handleChange = (event, name) => {
@@ -63,44 +57,15 @@ class About extends React.Component {
                     rangeName='secondRange'
                     step={this.state.step}
                     handleChange={this.handleChange2} />
-
-                {/*<div>*/}
-
-                    {/*<div className="rangeValues">Range : {this.state.rangeValue}</div>*/}
-
-
-                    {/*<div className="range-holder">*/}
-
-                        {/*<input*/}
-                            {/*name="rangeValue"*/}
-                            {/*type="range"*/}
-                            {/*value={this.state.rangeValue}*/}
-                            {/*min={this.state.minValue}*/}
-                            {/*max={this.state.maxValue}*/}
-                            {/*step={this.state.step}*/}
-                            {/*onChange={this.handleChange.bind(this, "first")}*/}
-                        {/*/>*/}
-                    {/*</div>*/}
-                {/*</div>*/}
-
-                {/*<div>*/}
-
-                    {/*<div className="rangeValues">Range : {this.state.rangeValue2}</div>*/}
+                <RangeSlider
+                    minValue='0'
+                    maxValue='100'
+                    rangeValue={this.state.thirdRange}
+                    rangeName='thirdRange'
+                    step={this.state.step}
+                    handleChange={this.handleChange2} />
 
 
-                    {/*<div className="range-holder">*/}
-                        {/*<input*/}
-                            {/*name="rangeValue2"*/}
-                            {/*type="range"*/}
-                            {/*value={this.state.rangeValue2}*/}
-                            {/*min={this.state.minValue}*/}
-                            {/*max={this.state.maxValue}*/}
-                            {/*step={this.state.step}*/}
-                            {/*onChange={this.handleChange.bind(this, "second")}*/}
-                            {/*className="range"*/}
-                        {/*/>*/}
-                    {/*</div>*/}
-                {/*</div>*/}
 
                 <br/>
                 <br/>
