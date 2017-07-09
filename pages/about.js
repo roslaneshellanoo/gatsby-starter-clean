@@ -1,37 +1,108 @@
-import React from 'react'
-import {Link} from 'react-router'
-import {prefixLink} from 'gatsby-helpers'
-import Helmet from 'react-helmet'
-import {config} from 'config'
+import React from "react";
+import PropTypes from 'prop-types'
+import {Link} from "react-router";
+import {prefixLink} from "gatsby-helpers";
+import {config} from "config";
+import RangeSlider from '../components/rangeSlider'
 
-import base from '../utils/firebase'
+import base from "../utils/firebase";
 
 
-export default class Index extends React.Component {
+class About extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            user: '',
-            quiz: [],
-            loading: true
+            minValue: 0,
+            maxValue: 100,
+            step: 5,
+            firstRange: 50,
+            secondRange: 50
         }
     }
 
     componentDidMount() {
-        this.ref = base.syncState('quiz', {
-            context: this,
-            state: 'quiz',
-            asArray: true
-        })
+
+    }
+
+    handleChange = (event, name) => {
+        let value = event.target.value;
+        let name2 = event.target.name
+        let obj = {}
+        obj[name2] = value
+        return this.setState(obj)
+    }
+
+    handleChange2 = (event) => {
+        let value = event.target.value;
+        let name = event.target.name
+        let obj = {}
+        obj[name] = value
+        console.log(obj)
+        return this.setState(obj)
     }
 
     render() {
         return (
             <div>
+                <br/>
+                <br/>
+                <br/>
 
-                {this.state.quiz.map((item, index) =>
-                    <div key={index}>{item.question}</div>
-                )}
+
+                <RangeSlider
+                    minValue='0'
+                    maxValue='100'
+                    rangeValue={this.state.firstRange}
+                    rangeName='firstRange'
+                    step={this.state.step}
+                    handleChange={this.handleChange2} />
+                <RangeSlider
+                    minValue='0'
+                    maxValue='100'
+                    rangeValue={this.state.secondRange}
+                    rangeName='secondRange'
+                    step={this.state.step}
+                    handleChange={this.handleChange2} />
+
+                {/*<div>*/}
+
+                    {/*<div className="rangeValues">Range : {this.state.rangeValue}</div>*/}
+
+
+                    {/*<div className="range-holder">*/}
+
+                        {/*<input*/}
+                            {/*name="rangeValue"*/}
+                            {/*type="range"*/}
+                            {/*value={this.state.rangeValue}*/}
+                            {/*min={this.state.minValue}*/}
+                            {/*max={this.state.maxValue}*/}
+                            {/*step={this.state.step}*/}
+                            {/*onChange={this.handleChange.bind(this, "first")}*/}
+                        {/*/>*/}
+                    {/*</div>*/}
+                {/*</div>*/}
+
+                {/*<div>*/}
+
+                    {/*<div className="rangeValues">Range : {this.state.rangeValue2}</div>*/}
+
+
+                    {/*<div className="range-holder">*/}
+                        {/*<input*/}
+                            {/*name="rangeValue2"*/}
+                            {/*type="range"*/}
+                            {/*value={this.state.rangeValue2}*/}
+                            {/*min={this.state.minValue}*/}
+                            {/*max={this.state.maxValue}*/}
+                            {/*step={this.state.step}*/}
+                            {/*onChange={this.handleChange.bind(this, "second")}*/}
+                            {/*className="range"*/}
+                        {/*/>*/}
+                    {/*</div>*/}
+                {/*</div>*/}
+
+                <br/>
                 <br/>
                 <br/>
                 <br/>
@@ -49,3 +120,5 @@ export default class Index extends React.Component {
         )
     }
 }
+
+export default About
