@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import '../assets/_range.scss'
+import './_range.scss'
 class RangeSlider extends React.Component {
     constructor(props) {
         super(props)
@@ -8,7 +8,7 @@ class RangeSlider extends React.Component {
 
     render () {
         return (
-            <div className="range-slider">
+            <div className={'range-range-slider '+ this.props.position}>
                 <input
                     name={this.props.rangeName}
                     type="range"
@@ -17,11 +17,12 @@ class RangeSlider extends React.Component {
                     max={this.props.maxValue}
                     step={this.props.step}
                     onChange={this.props.handleChange}
-                    className="range-slider__range"
+                    className={'range-slider__range '+ this.props.position}
                 />
-                <p>
+
+                <div>
                     Range :  {this.props.rangeValue}
-                </p>
+                </div>
             </div>
         )
     }
@@ -34,5 +35,8 @@ RangeSlider.propTypes = {
     step: PropTypes.any,
     rangeName: PropTypes.any,
     testProp: PropTypes.any
+}
+RangeSlider.defaultProps = {
+    position: 'horizontal'
 }
 export default RangeSlider

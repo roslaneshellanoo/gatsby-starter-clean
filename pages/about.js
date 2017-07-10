@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import {Link} from "react-router";
 import {prefixLink} from "gatsby-helpers";
 import {config} from "config";
-import RangeSlider from '../components/rangeSlider'
+import RangeSlider from '../components/RangeSlider'
 
 class About extends React.Component {
     constructor(props) {
@@ -33,6 +33,8 @@ class About extends React.Component {
                 <br/>
                 <br/>
                 <br/>
+                <br/>
+                <br/>
 
 
                 <RangeSlider
@@ -41,7 +43,19 @@ class About extends React.Component {
                     rangeValue={this.state.firstRange}
                     rangeName='firstRange'
                     step={this.state.step}
+                    position='vertical'
                     handleChange={this.handleChange} />
+                <RangeSlider
+                    minValue='0'
+                    maxValue='100'
+                    rangeValue={this.state.firstRange}
+                    rangeName='firstRange'
+                    step={this.state.step}
+                    position='vertical'
+                    handleChange={this.handleChange} />
+                <br/>
+                <br/>
+                <br/>
                 <RangeSlider
                     minValue='0'
                     maxValue='100'

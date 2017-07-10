@@ -9,8 +9,9 @@ const options = {
     {
       name: 'Roboto',
       styles: [
+        '300',
         '400',
-        '400i',        
+        '400i',
         '700'
       ]
     }
