@@ -11,14 +11,13 @@ const options = {
       styles: [
         '300',
         '400',
-        '400i',
         '700'
       ]
     }
   ],
   headerFontFamily: ['Roboto', 'sans-serif'],
   bodyFontFamily: ['Roboto', 'sans-serif'],
-  baseFontSize: '18px',
+  baseFontSize: '16px',
   baseLineHeight: 1.65,
   scale: 2.25,
   plugins: [
