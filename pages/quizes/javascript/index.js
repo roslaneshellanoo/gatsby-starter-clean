@@ -173,10 +173,18 @@ export default class JavascriptQuiz extends React.Component {
                                                             primaryText={response.text}
                                                             leftAvatar={
                                                                 <Avatar
-                                                                    color={'red'} backgroundColor={transparent}
-                                                                    style={{left: 8}}
+                                                                    color={'#00bcd4'} backgroundColor={transparent}
+                                                                    style={{
+                                                                        left: 8,
+                                                                        top: 12,
+                                                                        border: '1px solid',
+                                                                        fontSize: '15px',
+                                                                        fontWeight: 300,
+                                                                        width: '30px',
+                                                                        height: '30px'
+                                                                    }}
                                                                 >
-                                                                    {index + 1 + '.'}
+                                                                    {index + 1 }
                                                                 </Avatar>
                                                             }
                                                         />
