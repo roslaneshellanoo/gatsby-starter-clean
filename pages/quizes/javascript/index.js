@@ -19,10 +19,11 @@ const styles = {
     quizWrapper: {
         padding: '0',
         border: 'solid 1px #d9d9d9',
-        borderBottom: 'none'
+        borderBottom: 'none',
     },
     list: {
-        borderBottom: '1px solid #d9d9d9'
+        borderBottom: '1px solid #d9d9d9',
+        // backgroundColor: 'red'
     },
     sidebar: {
         top: {
@@ -59,7 +60,7 @@ function wrapState(ComposedComponent) {
             return (
                 <ComposedComponent
                     style={styles.quizWrapper}
-                    className="5435435"
+                    className="wrap-list-items"
                     value={this.state.selectedIndex}
                     onChange={this.handleRequestChange}
                 >
@@ -167,6 +168,7 @@ export default class JavascriptQuiz extends React.Component {
                                                 {question.responses.map((response, index) =>
                                                         <ListItem
                                                             style={styles.list}
+                                                            hoverColor={'#f9fffb'}
                                                             value={index}
                                                             onTouchTap={() => this.clickedAnswer(index, response.text)}
                                                             key={index}
