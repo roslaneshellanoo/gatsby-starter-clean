@@ -4,6 +4,7 @@ import { prefixLink } from 'gatsby-helpers'
 import { config } from 'config'
 import {Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle} from 'material-ui/Toolbar'
 import FlatButton from 'material-ui/FlatButton'
+import muiThemeable from 'material-ui/styles/muiThemeable'
 
 const style ={
     toolbar: {
@@ -11,10 +12,16 @@ const style ={
         boxShadow: 'rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px'
     },
     link: {
-        margin: '10px 15px'
+        margin: '10px 15px',
+    },
+    label: {
+        fontSize: '15px',
+        fontWeight: 300,
+        textTransform: 'none',
+        letterSpacing: '1px'
     }
 }
-export default class Header extends React.Component {
+class Header extends React.Component {
 
     constructor(props) {
         super(props);
@@ -32,16 +39,19 @@ export default class Header extends React.Component {
                 <ToolbarGroup>
                     <FlatButton
                         style={style.link}
+                        labelStyle={style.label}
                         containerElement={<Link to="/about/" />}
                         label={'About'}
                     />
                     <FlatButton
                         style={style.link}
+                        labelStyle={style.label}
                         containerElement={<Link style={style.link} to="/quizes/" />}
                         label={'Quizes'}
                     />
                     <FlatButton
                         style={style.link}
+                        labelStyle={style.label}
                         containerElement={<Link style={style.link} to="/quizes/javascript/" />}
                         label={'Javascript'}
                     />
@@ -50,3 +60,5 @@ export default class Header extends React.Component {
         );
     }
 }
+
+export default muiThemeable() (Header)

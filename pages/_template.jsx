@@ -11,7 +11,7 @@ import Header from '../components/Header'
 import Banner from '../components/Banner'
 
 injectTapEventPlugin()
-
+import '../assets/style.scss'
 import '../css/markdown-styles'
 
 import { rhythm } from '../utils/typography'

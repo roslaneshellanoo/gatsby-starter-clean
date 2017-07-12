@@ -15,6 +15,14 @@ const styles = {
         display: 'flex',
         flexWrap: 'wrap',
     },
+    quizWrapper: {
+        padding: '0',
+        border: 'solid 1px #d9d9d9',
+        borderBottom: 'none'
+    },
+    list: {
+        borderBottom: '1px solid #d9d9d9'
+    }
 };
 
 let SelectableList = makeSelectable(List);
@@ -41,6 +49,8 @@ function wrapState(ComposedComponent) {
         render() {
             return (
                 <ComposedComponent
+                    style={styles.quizWrapper}
+                    className="5435435"
                     value={this.state.selectedIndex}
                     onChange={this.handleRequestChange}
                 >
@@ -130,9 +140,9 @@ export default class JavascriptQuiz extends React.Component {
         return (
             <div>
                 <Helmet title={`${config.siteTitle} | Javascript quiz`}/>
-                <h1>
-                    this is javascript page
-                </h1>
+                {/*<h1>*/}
+                    {/*this is javascript page*/}
+                {/*</h1>*/}
                 <div className='wrap-quiz'>
                     <div className='wrap-questions'>
                         {this.state.quiz.questions.map((question, index) => {
@@ -140,26 +150,26 @@ export default class JavascriptQuiz extends React.Component {
                                 return (
                                     <div key={index}>
 
-                                        <div key={index}>{question.text}</div>
-                                        <SelectableList className='wrap-answers'>
-                                            {question.responses.map((response, index) =>
-                                                <ListItem
-                                                    value={index}
-                                                    onTouchTap={() => this.clickedAnswer(index, response.text)}
-                                                    key={index}
-                                                    primaryText={response.text}
-                                                    leftAvatar={
-                                                        <Avatar
-                                                            color={'red'} backgroundColor={transparent}
-                                                            style={{left: 8}}
-                                                        >
-                                                            {index + 1 + '.'}
-                                                        </Avatar>
-                                                    }
-                                                />
-                                            )}
-                                        </SelectableList>
-
+                                        <h3 key={index}>{question.text}</h3>
+                                            <SelectableList className='wrap-answers'>
+                                                {question.responses.map((response, index) =>
+                                                        <ListItem
+                                                            style={styles.list}
+                                                            value={index}
+                                                            onTouchTap={() => this.clickedAnswer(index, response.text)}
+                                                            key={index}
+                                                            primaryText={response.text}
+                                                            leftAvatar={
+                                                                <Avatar
+                                                                    color={'red'} backgroundColor={transparent}
+                                                                    style={{left: 8}}
+                                                                >
+                                                                    {index + 1 + '.'}
+                                                                </Avatar>
+                                                            }
+                                                        />
+                                                )}
+                                            </SelectableList>
                                     </div>
                                 )
                             }
@@ -167,6 +177,7 @@ export default class JavascriptQuiz extends React.Component {
                         })}
                     </div>
                     <div>
+                        <br/>
                         { this.state.questionIndex < this.state.quizLength  ?
                             <RaisedButton onTouchTap={this.handleNext} label="Next" primary/> :
                             null
@@ -174,7 +185,7 @@ export default class JavascriptQuiz extends React.Component {
                         <br />
                         <br />
                     </div>
-                    <Divider />
+
 
                     {this.finalScore()}
 
