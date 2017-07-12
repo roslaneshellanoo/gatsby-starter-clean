@@ -9,7 +9,7 @@ import Divider from "material-ui/Divider";
 import Avatar from "material-ui/Avatar";
 import {pinkA200, transparent} from "material-ui/styles/colors";
 import RaisedButton from "material-ui/RaisedButton";
-import { Container, Grid, Breakpoint, Span } from 'react-responsive-grid'
+import LinearProgress from 'material-ui/LinearProgress';
 
 const styles = {
     root: {
@@ -76,6 +76,7 @@ export default class JavascriptQuiz extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
+            completed: 0,
             quiz: quiz,
             quizLength: quiz.questions.length,
             steps: quiz.questions.map(function (v, i) {
@@ -100,7 +101,8 @@ export default class JavascriptQuiz extends React.Component {
         if (responses[quizIndex] !== null) {
             this.setState({
                 questionIndex: this.state.questionIndex + 1,
-                activeStep: this.state.activeStep + 1
+                activeStep: this.state.activeStep + 1,
+                completed: this.state.completed + 20
             })
         }
     }
@@ -200,13 +202,14 @@ export default class JavascriptQuiz extends React.Component {
 
                 </div>
                 <div className="content-sidebar col-xs-3">
+                    <LinearProgress style={{borderRadius: 0}} mode="determinate" value={this.state.completed} />
                     <div className="box-row">
                         <div style={styles.sidebar.top}>
                             <span>83%</span>
                         </div>
-                       <h3> STAGE {this.state.questionIndex}</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aspernatur culpa cupiditate facilis fuga minus odio praesentium provident quam vitae? Culpa, dicta dignissimos hic natus nihil nostrum quia tenetur vero!</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At beatae cupiditate deleniti ea facere in inventore, ipsum iure maxime mollitia nostrum, odit perferendis quam quasi quos recusandae repudiandae rerum sit?</p>
+                       <h4> STAGE {this.state.questionIndex} of {this.state.quizLength}</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+                        <p>At beatae cupiditate deleniti ea facere in inventore, ipsum iure maxime mollitia nostrum, odit perferendis quam quasi quos recusandae repudiandae rerum sit?</p>
                     </div>
 
                 </div>
