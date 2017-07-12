@@ -10,9 +10,13 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import Header from '../components/Header'
 import Banner from '../components/Banner'
 
-injectTapEventPlugin()
+// Styles
+import 'flexboxgrid'
 import '../assets/style.scss'
 import '../css/markdown-styles'
+
+injectTapEventPlugin()
+
 
 import { rhythm } from '../utils/typography'
 

@@ -9,6 +9,7 @@ import Divider from "material-ui/Divider";
 import Avatar from "material-ui/Avatar";
 import {pinkA200, transparent} from "material-ui/styles/colors";
 import RaisedButton from "material-ui/RaisedButton";
+import { Container, Grid, Breakpoint, Span } from 'react-responsive-grid'
 
 const styles = {
     root: {
@@ -22,6 +23,14 @@ const styles = {
     },
     list: {
         borderBottom: '1px solid #d9d9d9'
+    },
+    sidebar: {
+        top: {
+            color: '#9f7ece',
+            fontSize: '30px',
+            textAlign: 'center',
+            margin: '2rem 0'
+        }
     }
 };
 
@@ -138,12 +147,12 @@ export default class JavascriptQuiz extends React.Component {
     render() {
 
         return (
-            <div>
+            <div className="row">
                 <Helmet title={`${config.siteTitle} | Javascript quiz`}/>
                 {/*<h1>*/}
                     {/*this is javascript page*/}
                 {/*</h1>*/}
-                <div className='wrap-quiz'>
+                <div className='wrap-quiz col-xs-9'>
                     <div className='wrap-questions'>
                         {this.state.quiz.questions.map((question, index) => {
                             if (index === this.state.questionIndex) {
@@ -190,6 +199,19 @@ export default class JavascriptQuiz extends React.Component {
                     {this.finalScore()}
 
                 </div>
+                <div className="content-sidebar col-xs-3">
+                    <div className="box-row">
+                        <div style={styles.sidebar.top}>
+                            <span>83%</span>
+                        </div>
+                       <h3> STAGE {this.state.questionIndex}</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aspernatur culpa cupiditate facilis fuga minus odio praesentium provident quam vitae? Culpa, dicta dignissimos hic natus nihil nostrum quia tenetur vero!</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At beatae cupiditate deleniti ea facere in inventore, ipsum iure maxime mollitia nostrum, odit perferendis quam quasi quos recusandae repudiandae rerum sit?</p>
+                    </div>
+
+                </div>
+
+
             </div>
         )
     }

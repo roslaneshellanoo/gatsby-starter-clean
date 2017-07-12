@@ -5,3 +5,22 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-weight: 300;
 }
+
+.box,.box-first,.box-large,.box-nested,.box-row {
+  @media only screen and (min-width: 48rem) {
+    padding: 1rem
+  }
+}
+
+.content-sidebar {
+  background: #282938;
+  color: #d0cadb;
+  font-size: 14px;
+  border-radius: 5px;
+  box-shadow: inset 0 2px 52px black;
+
+  h1, h2, h3, h4, h5, h6 {
+    color: #00bcd4;
+    margin: 1rem 0;
+  }
+}
