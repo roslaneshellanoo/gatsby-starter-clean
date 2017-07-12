@@ -105,7 +105,7 @@ export default class Quiz extends React.Component {
             this.setState({
                 questionIndex: this.state.questionIndex + 1,
                 activeStep: this.state.activeStep + 1,
-                completed: this.state.completed + Math.round(totalPercent)
+                completed: this.state.completed + totalPercent
             })
         }
     }
@@ -214,7 +214,7 @@ export default class Quiz extends React.Component {
                     <LinearProgress style={{borderRadius: 0}} mode="determinate" value={this.state.completed} />
                     <div className="box-row">
                         <div style={styles.sidebar.top}>
-                            <span>{this.state.completed}%</span>
+                            <span>{parseInt(this.state.completed)}%</span>
                         </div>
                         <h4> STAGE {this.state.questionIndex} of {this.state.quizLength}</h4>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
