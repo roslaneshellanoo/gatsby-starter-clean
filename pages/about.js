@@ -1,20 +1,17 @@
 import React from "react";
 import PropTypes from 'prop-types'
+import Helmet from "react-helmet";
 import {Link} from "react-router";
 import {prefixLink} from "gatsby-helpers";
 import {config} from "config";
-import RangeSlider from '../components/RangeSlider'
+import Quiz from '../components/Quiz/Quiz'
+import JavascriptQuestions from '../components/Quiz/Questions/JavascriptQuestions'
 
 class About extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            minValue: 0,
-            maxValue: 100,
-            step: 5,
-            firstRange: 50,
-            secondRange: 50,
-            thirdRange: 50
+            quiz: JavascriptQuestions
         }
     }
 
@@ -30,58 +27,9 @@ class About extends React.Component {
     render() {
         return (
             <div>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
+                <Helmet title={`${config.siteTitle} | About Us`}/>
+                <Quiz questions={this.state.quiz}/>
 
-
-                <RangeSlider
-                    minValue='0'
-                    maxValue='100'
-                    rangeValue={this.state.firstRange}
-                    rangeName='firstRange'
-                    step={this.state.step}
-                    position='vertical'
-                    handleChange={this.handleChange} />
-                <RangeSlider
-                    minValue='0'
-                    maxValue='100'
-                    rangeValue={this.state.firstRange}
-                    rangeName='firstRange'
-                    step={this.state.step}
-                    position='vertical'
-                    handleChange={this.handleChange} />
-                <br/>
-                <br/>
-                <br/>
-                <RangeSlider
-                    minValue='0'
-                    maxValue='100'
-                    rangeValue={this.state.secondRange}
-                    rangeName='secondRange'
-                    step={this.state.step}
-                    handleChange={this.handleChange} />
-                <RangeSlider
-                    minValue='0'
-                    maxValue='100'
-                    rangeValue={this.state.thirdRange}
-                    rangeName='thirdRange'
-                    step={this.state.step}
-                    handleChange={this.handleChange} />
-
-
-
-                <br/>
-                <br/>
-                <h1>Total sum :
-                    {parseInt(this.state.firstRange) +
-                    parseInt(this.state.secondRange) +
-                    parseInt(this.state.thirdRange)}
-                    </h1>
-                <br/>
-                <br/>
                 <p>Welcome to page 2</p>
                 <Link to={prefixLink('/')}>Go back to the homepage</Link>
                 <br/>
