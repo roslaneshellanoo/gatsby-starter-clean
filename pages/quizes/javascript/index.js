@@ -131,7 +131,8 @@ export default class JavascriptQuiz extends React.Component {
             activeStep: 1,
             questionIndex: 0,
             userResponses: new Array(quiz.questions.length).fill(null),
-            score: 0
+            score: 0,
+            completed: 0
         })
     }
 
@@ -154,7 +155,7 @@ export default class JavascriptQuiz extends React.Component {
                 {/*<h1>*/}
                     {/*this is javascript page*/}
                 {/*</h1>*/}
-                <div className='wrap-quiz col-xs-9'>
+                <div className='wrap-quiz col-xs-12 col-sm-9'>
                     <div className='wrap-questions'>
                         {this.state.quiz.questions.map((question, index) => {
                             if (index === this.state.questionIndex) {
@@ -201,7 +202,7 @@ export default class JavascriptQuiz extends React.Component {
                     {this.finalScore()}
 
                 </div>
-                <div className="content-sidebar col-xs-3">
+                <div className="content-sidebar col-sm-3">
                     <LinearProgress style={{borderRadius: 0}} mode="determinate" value={this.state.completed} />
                     <div className="box-row">
                         <div style={styles.sidebar.top}>
