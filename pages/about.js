@@ -28,7 +28,6 @@ class About extends React.Component {
         return (
             <div>
                 <Helmet title={`${config.siteTitle} | About Us`}/>
-                <Quiz questions={this.state.quiz}/>
 
                 <p>Welcome to page 2</p>
                 <Link to={prefixLink('/')}>Go back to the homepage</Link>

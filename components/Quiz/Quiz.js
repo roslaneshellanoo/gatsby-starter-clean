@@ -9,6 +9,8 @@ import Avatar from "material-ui/Avatar";
 import {pinkA200, transparent} from "material-ui/styles/colors";
 import RaisedButton from "material-ui/RaisedButton";
 import LinearProgress from 'material-ui/LinearProgress';
+import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+import Paper from 'material-ui/Paper';
 
 const styles = {
     root: {
@@ -59,6 +61,7 @@ function wrapState(ComposedComponent) {
         render() {
             return (
                 <ComposedComponent
+                    selectedItemStyle={{ backgroundColor: 'rgba(0, 150, 78, 0.13)'}}
                     style={styles.quizWrapper}
                     className="wrap-list-items"
                     value={this.state.selectedIndex}
@@ -140,11 +143,50 @@ export default class Quiz extends React.Component {
     }
 
     finalScore = () => {
+        let scorePercent = 100 / this.state.quizLength
         if (this.state.questionIndex >= this.state.quizLength ) {
             return (
                 <div>
-                    <div>My score is {this.state.score}</div>
-                    <RaisedButton onTouchTap={this.restart} label="Restart" />
+                    <h2 className="text-center">{this.props.quizTitle} is Finished</h2>
+                    <Card style={{textAlign: 'center', maxWidth: '350px', margin: 'auto'}}>
+                        <CardTitle
+                            style={{background: 'linear-gradient(160deg, #02CCBA 0%, #AA7ECD 100%)', padding: '3rem 1rem'}}
+                            titleStyle={{color: 'white', fontSize: '46px', marginBottom: '1rem'}}
+                            subtitleStyle={{color: 'white', letterSpacing: '2px'}}
+                            title={`${parseInt(this.state.score * scorePercent)}%`}
+                            subtitle={`Your Score`} />
+                        <CardActions style={{padding: '1rem'}}>
+                            <div className="text-center">
+                                <RaisedButton onTouchTap={this.restart} label="Restart Quiz" />
+                            </div>
+                        </CardActions>
+                    </Card>
+                    <br/>
+                    <br/>
+                    <div className="wrap-results-questions">
+                        {this.state.quiz.questions.map((question, questionIndex) =>
+                            <Paper key={questionIndex}  zDepth={1}>
+                                <div key={questionIndex}>
+                                    <h4 className="results-question">{question.text}</h4>
+                                    <ul>
+                                        {question.responses.map((response, index) => {
+                                                return (
+                                                    <li key={index}
+                                                        className={ (question.answer === index) ? 'mark-right-answer' : null} >
+
+                                                        {response.text}
+
+                                                    </li>
+                                                )
+                                            }
+                                        )}
+                                    </ul>
+                                </div>
+                            </Paper>
+
+                        )}
+                    </div>
+
                 </div>
             )
         }
@@ -173,15 +215,15 @@ export default class Quiz extends React.Component {
                                                     primaryText={response.text}
                                                     leftAvatar={
                                                         <Avatar
-                                                            color={'#00bcd4'} backgroundColor={transparent}
+                                                            color={'#ffffff'} backgroundColor={'#00bcd4'}
                                                             style={{
                                                                 left: 8,
-                                                                top: 12,
-                                                                border: '1px solid',
-                                                                fontSize: '15px',
+                                                                top: 16,
+                                                                border: '1px solid #00bcd4',
+                                                                fontSize: '14px',
                                                                 fontWeight: 300,
-                                                                width: '30px',
-                                                                height: '30px'
+                                                                width: '25px',
+                                                                height: '25px'
                                                             }}
                                                         >
                                                             {index + 1 }
@@ -206,19 +248,20 @@ export default class Quiz extends React.Component {
                         <br />
                     </div>
 
-
                     {this.finalScore()}
 
                 </div>
                 <div className="content-sidebar col-sm-3">
-                    <LinearProgress style={{borderRadius: 0}} mode="determinate" value={this.state.completed} />
+                    <LinearProgress style={{borderRadius: 0, height: '6px'}} mode="determinate" value={this.state.completed} />
                     <div className="box-row">
                         <div style={styles.sidebar.top}>
                             <span>{parseInt(this.state.completed)}%</span>
                         </div>
-                        <h4> STAGE {this.state.questionIndex} of {this.state.quizLength}</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-                        <p>At beatae cupiditate deleniti ea facere in inventore, ipsum iure maxime mollitia nostrum, odit perferendis quam quasi quos recusandae repudiandae rerum sit?</p>
+                        {/*<div className="text-center"><span>Your Progress</span></div>*/}
+                        <h4 className="text-center"> STAGE {this.state.questionIndex} of {this.state.quizLength}</h4>
+                        <p>You started a {this.props.quizTitle}</p>
+                        <p>Finish the quiz to see the final results.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At cupiditate id illum iste!</p>
                     </div>
 
                 </div>
@@ -230,5 +273,6 @@ export default class Quiz extends React.Component {
 }
 
 Quiz.propTypes = {
-    questions: PropTypes.object
+    questions: PropTypes.object,
+    quizTitle: PropTypes.string
 }

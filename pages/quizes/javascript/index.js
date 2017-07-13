@@ -4,7 +4,7 @@ import {prefixLink} from "gatsby-helpers";
 import Helmet from "react-helmet";
 import {config} from "config";
 import Quiz from '../../../components/Quiz/Quiz'
-import JavascriptQuestions2 from '../../../components/Quiz/Questions/JavascriptQuestions2'
+import JavascriptQuestions from '../../../components/Quiz/Questions/JavascriptQuestions'
 
 
 
@@ -13,7 +13,7 @@ export default class JavascriptQuiz extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            quiz: JavascriptQuestions2,
+            quiz: JavascriptQuestions,
         }
 
     }
@@ -21,10 +21,9 @@ export default class JavascriptQuiz extends React.Component {
     render() {
 
         return (
-            <div className="row">
+            <div className="wrap-quiz-page">
                 <Helmet title={`${config.siteTitle} | Javascript quiz`}/>
-                <Quiz questions={this.state.quiz}/>
-
+                <Quiz questions={this.state.quiz} quizTitle={'Javascript Quiz'} />
             </div>
         )
     }
