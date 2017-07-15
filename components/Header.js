@@ -5,6 +5,7 @@ import { config } from 'config'
 import {Toolbar, ToolbarGroup} from 'material-ui/Toolbar'
 import FlatButton from 'material-ui/FlatButton'
 import muiThemeable from 'material-ui/styles/muiThemeable'
+import Logo from '../assets/logo4.png'
 
 const style ={
     toolbar: {
@@ -35,7 +36,9 @@ class Header extends React.Component {
             <Toolbar style={style.toolbar}>
                 <ToolbarGroup firstChild={false}>
                     <div className="logo">
-                        <Link to={prefixLink('/')}>Quizio.io</Link>
+                        <Link to={prefixLink('/')}>
+                            <img src={Logo} alt=""/>
+                        </Link>
                     </div>
 
                 </ToolbarGroup>
