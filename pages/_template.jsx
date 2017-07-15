@@ -27,9 +27,12 @@ class Template extends React.Component {
         //     return <Banner />
         // }
         const { location, children } = this.props
+        const classHome = location.pathname === prefixLink('/') ?  'homepage' : null
+
         return (
         <MuiThemeProvider>
-            <div>
+            {}
+            <div className={classHome}>
                 <Helmet
                     title={config.siteTitle}
                     meta={[

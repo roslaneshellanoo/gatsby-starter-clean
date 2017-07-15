@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="90px" height="90px" viewBox="0 0 90 90" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>D893CEB5-E4C7-4C1D-A36F-EF127D1A0B8E</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="286" height="126" rx="8"></rect>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="286" height="126" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <rect id="path-3" x="0" y="0" width="286" height="126" rx="8"></rect>
+        <mask id="mask-4" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="286" height="126" fill="white">
+            <use xlink:href="#path-3"></use>
+        </mask>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="codequiz-B" transform="translate(-593.000000, -436.000000)">
+            <rect id="Rectangle-4" fill="#FFFFFF" x="180" y="274" width="1080" height="446" rx="4"></rect>
+            <g id="vuejs-seeklogo.com-2" transform="translate(598.000000, 444.000000)">
+                <g id="Group">
+                    <polygon id="Shape" fill="#41B883" points="64 0 80 0 40 69.0732361 0 0 15.8 0 30.6 0 40 16.0169823 49.2 0"></polygon>
+                    <polygon id="Shape" fill="#41B883" points="0 0 40 69.0732361 80 0 64 0 40 41.4439417 15.8 0"></polygon>
+                    <polygon id="Shape" fill="#35495E" points="15.8 0 40 41.644154 64 0 49.2 0 40 16.0169823 30.6 0"></polygon>
+                </g>
+            </g>
+            <g id="Group-2-Copy-2" transform="translate(573.000000, 418.000000)" stroke="#D3DDEB" stroke-width="2">
+                <use id="Rectangle-5" mask="url(#mask-2)" xlink:href="#path-1"></use>
+                <use id="Rectangle-5-Copy" mask="url(#mask-4)" xlink:href="#path-3"></use>
+            </g>
+        </g>
+    </g>
+</svg>

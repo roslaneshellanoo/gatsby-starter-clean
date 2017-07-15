@@ -2,14 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 import {prefixLink} from "gatsby-helpers";
 import {config} from "config";
-import quiz from "../../components/Questions";
 import {List, ListItem, makeSelectable} from "material-ui/List";
-import Divider from "material-ui/Divider";
 import Avatar from "material-ui/Avatar";
-import {pinkA200, transparent} from "material-ui/styles/colors";
 import RaisedButton from "material-ui/RaisedButton";
 import LinearProgress from 'material-ui/LinearProgress';
-import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+import {Card, CardActions, CardTitle} from 'material-ui/Card';
 import Paper from 'material-ui/Paper';
 
 const styles = {
@@ -273,6 +270,6 @@ export default class Quiz extends React.Component {
 }
 
 Quiz.propTypes = {
-    questions: PropTypes.object,
-    quizTitle: PropTypes.string
+    questions: PropTypes.object.isRequired,
+    quizTitle: PropTypes.string.isRequired
 }

@@ -5,10 +5,70 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-weight: 300;
 }
-
 .text-center {
   text-align: center;
 }
+.white {
+  color: white;
+}
+.logo a {
+  font-size: 1.3rem;
+  text-decoration: none;
+  color: black;
+}
+
+.homepage {
+  background: #f1f1f1;
+}
+
+.wrap-home-boxes {
+  background: #fff;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  //box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 10px, rgba(0, 0, 0, 0.23) 0px 3px 10px;
+  box-shadow: 1px 5px 25px 0px rgba(46,61,73,0.2);
+  border-radius: 5px;
+  margin-bottom: 2rem;
+  position: relative;
+  top: -5rem;
+  padding-bottom: 2rem;
+
+  @media only screen and (min-width: 48rem) {
+    .box, .box-first, .box-large, .box-nested, .box-row {
+      padding: 2rem;
+    }
+  }
+
+  .topper {
+    padding: 1rem 1rem 0 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    h2 {
+      margin: 0;
+    }
+  }
+}
+.banner {
+  background-image: url("../assets/cosmos.jpg");
+  height: 400px;
+  background-position: center center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+   h2 {
+     letter-spacing: 5px;
+     text-transform: uppercase;
+   }
+  .particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
 
 .box,.box-first,.box-large,.box-nested,.box-row {
   @media only screen and (min-width: 48rem) {
@@ -69,3 +129,119 @@ h1, h2, h3, h4, h5, h6 {
   }
 
 }
+
+
+
+
+
+.blog-card {
+  transition: box-shadow 0.3s ease;
+  -webkit-transition: box-shadow 0.3s ease;
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: 0 3px 7px -3px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+  margin: 0 auto 1.6%;
+  overflow: hidden;
+  position: relative;
+  font-size: 14px;
+  line-height: 1.45em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.blog-card:hover {
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 10px, rgba(0, 0, 0, 0.23) 0px 3px 10px;
+}
+
+.blog-card .photo {
+  height: 200px;
+  position: relative;
+  img {
+    width: 100%;
+    padding: 1rem;
+  }
+}
+
+.blog-card .description {
+  padding: 15px;
+  box-sizing: border-box;
+  position: relative;
+}
+.blog-card .description h3 {
+  line-height: 1em;
+  margin: 0 0 10px 0;
+}
+.blog-card .description h2 {
+  color: #9b9b9b;
+  line-height: 1.2em;
+  text-transform: uppercase;
+  font-size: 1em;
+  font-weight: 400;
+  margin: 1.2% 0;
+}
+.blog-card .description p {
+  position: relative;
+  margin: 0;
+  padding-top: 2rem;
+}
+.blog-card .description p:after {
+  content: "";
+  background: #00bcd4;
+  height: 6px;
+  width: 40px;
+  /*POSITION*/
+  position: absolute;
+  top: 6px;
+  left: 0;
+}
+.blog-card .description a {
+  color: #00bcd4;
+  margin-bottom: 10px;
+  float: right;
+}
+
+.card-read-more {
+  border-top: 1px solid rgba(0,0,0,.1);
+  padding: 5px 0;
+  a {
+    text-decoration: none;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .blog-card {
+    height: 160px;
+    max-width: 600px;
+  }
+
+  .blog-card.alt .description {
+    float: right;
+  }
+  .blog-card.alt .description:before {
+    -webkit-transform: skewX(5deg);
+    transform: skewX(5deg);
+    right: -15px;
+    left: inherit;
+  }
+  .blog-card.alt .photo {
+    float: right;
+  }
+  .blog-card .photo {
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    float: left;
+    height: 100%;
+    width: 40%;
+  }
+  .blog-card .details {
+    width: 40%;
+  }
+  .blog-card .description {
+    float: left;
+    width: 60%;
+    z-index: 0;
+  }
+}
+

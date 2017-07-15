@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router'
 import { prefixLink } from 'gatsby-helpers'
 import { config } from 'config'
-import {Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle} from 'material-ui/Toolbar'
+import {Toolbar, ToolbarGroup} from 'material-ui/Toolbar'
 import FlatButton from 'material-ui/FlatButton'
 import muiThemeable from 'material-ui/styles/muiThemeable'
 
@@ -34,7 +34,10 @@ class Header extends React.Component {
         return (
             <Toolbar style={style.toolbar}>
                 <ToolbarGroup firstChild={false}>
-                    <ToolbarTitle text="Quizio.io" />
+                    <div className="logo">
+                        <Link to={prefixLink('/')}>Quizio.io</Link>
+                    </div>
+
                 </ToolbarGroup>
                 <ToolbarGroup>
                     <FlatButton
