@@ -11,6 +11,9 @@ h1, h2, h3, h4, h5, h6 {
 .white {
   color: white;
 }
+.white-bg {
+  background-color: white;
+}
 .logo a {
   font-size: 1.3rem;
   text-decoration: none;
@@ -48,7 +51,8 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 .banner {
-  background-image: url("../assets/cosmos.jpg");
+
+  background-image: url("../assets/dive.jpg");
   height: 400px;
   background-position: center center;
   display: flex;
@@ -185,6 +189,7 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   margin: 0;
   padding-top: 2rem;
+  color: hsla(0,0%,0%,0.8);
 }
 .blog-card .description p:after {
   content: "";
