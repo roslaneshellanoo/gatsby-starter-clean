@@ -241,8 +241,6 @@ export default class Quiz extends React.Component {
                             <RaisedButton onTouchTap={this.handleNext} label="Next" primary/> :
                             null
                         }
-                        <br />
-                        <br />
                     </div>
 
                     {this.finalScore()}
@@ -251,14 +249,13 @@ export default class Quiz extends React.Component {
                 <div className="content-sidebar col-sm-3">
                     <LinearProgress style={{borderRadius: 0, height: '6px'}} mode="determinate" value={this.state.completed} />
                     <div className="box-row">
-                        <div style={styles.sidebar.top}>
+                        <div className="perc-info">
                             <span>{parseInt(this.state.completed)}%</span>
                         </div>
                         {/*<div className="text-center"><span>Your Progress</span></div>*/}
                         <h4 className="text-center"> STAGE {this.state.questionIndex} of {this.state.quizLength}</h4>
                         <p>You started a {this.props.quizTitle}</p>
                         <p>Finish the quiz to see the final results.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At cupiditate id illum iste!</p>
                     </div>
 
                 </div>

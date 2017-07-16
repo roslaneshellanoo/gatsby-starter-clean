@@ -5,7 +5,7 @@ import { config } from 'config'
 import {Toolbar, ToolbarGroup} from 'material-ui/Toolbar'
 import FlatButton from 'material-ui/FlatButton'
 import muiThemeable from 'material-ui/styles/muiThemeable'
-import Logo from '../assets/logo5.png'
+import Logo from '../assets/logo10.png'
 
 const style ={
     toolbar: {

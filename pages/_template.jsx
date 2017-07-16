@@ -9,7 +9,7 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import Header from '../components/Header'
 import Banner from '../components/Banner'
-
+import Footer from '../components/Footer'
 // Styles
 import 'flexboxgrid'
 import '../assets/style.scss'
@@ -50,6 +50,7 @@ class Template extends React.Component {
                 >
                     {children}
                 </Container>
+                <Footer/>
             </div>
         </MuiThemeProvider>
 
