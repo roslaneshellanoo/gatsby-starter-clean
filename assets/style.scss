@@ -5,6 +5,9 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-weight: 300;
 }
+pre {
+  color: #99876d;
+}
 .text-center {
   text-align: center;
 }
@@ -123,6 +126,14 @@ h1, h2, h3, h4, h5, h6 {
     color: #00bcd4;
     margin: 1rem 0;
   }
+}
+
+.wrap-quiz {
+  margin-top: 3rem;
+}
+
+.wrap-list-items {
+  margin-bottom: 2rem;
 }
 
 .wrap-results-questions {
@@ -270,5 +281,12 @@ h1, h2, h3, h4, h5, h6 {
 .footer {
   .link-foot {
     align-self: flex-end;
+  }
+  .end {
+    text-align: end;
+  }
+  a {
+    color: #2c3e50;
+    text-decoration: none;
   }
 }

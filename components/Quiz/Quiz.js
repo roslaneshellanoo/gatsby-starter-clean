@@ -200,7 +200,14 @@ export default class Quiz extends React.Component {
                                 return (
                                     <div key={index}>
 
-                                        <h3 key={index}>{question.text}</h3>
+                                        <div className="que-block">
+                                            <h3 className='question-title' key={index}>{question.text}</h3>
+                                            {question.code ?
+                                                <pre><code>{question.code}</code></pre>
+                                                : null
+                                            }
+                                        </div>
+
                                         <SelectableList className='wrap-answers'>
                                             {question.responses.map((response, index) =>
                                                 <ListItem
@@ -236,7 +243,7 @@ export default class Quiz extends React.Component {
                         })}
                     </div>
                     <div>
-                        <br/>
+
                         { this.state.questionIndex < this.state.quizLength  ?
                             <RaisedButton onTouchTap={this.handleNext} label="Next" primary/> :
                             null

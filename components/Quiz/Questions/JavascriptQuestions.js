@@ -1,43 +1,10 @@
-let question3 =
-        `const store = new Vuex.Store({
-    state: {
-      count: 0
-    },
-    mutations: {
-      increment: state => state.count++,
-      decrement: state => state.count--
-    }
-  });
-`,
-
-    question2 =
-        `var name = "John";
-function sayHi() {
-  alert(name);
-}
-setTimeout(function() {
-  var name = "James";
-  sayHi();
-}, 1000);
-`,
-
-    question4 =
-        `function() {
-    var a = 10;
-    if(a > 5) {
-        a = 7;
-    }
-    alert(a);
-}
-`
-;
-
 const JavascriptQuestions = {
     title: 'My quiz',
     questions: [
 
         {
-            text: 'What is the correct keyword to declare a Variable?',
+            text: 'Чему равна переменная name',
+            code: `var name = "пупкин".replace("п", "д")`,
 
             responses: [
 
@@ -99,7 +66,7 @@ const JavascriptQuestions = {
 
         {
             text: "Question 3",
-            textcode: question3,
+            textcode: '',
             responses: [
 
                 {
