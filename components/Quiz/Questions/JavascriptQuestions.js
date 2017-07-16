@@ -1,5 +1,5 @@
 const JavascriptQuestions = {
-    title: 'My quiz',
+    title: 'Javascript Quiz',
     questions: [
 
         {
@@ -7,58 +7,47 @@ const JavascriptQuestions = {
             code: `var name = "ravid".replace("r", "d")`,
 
             responses: [
-
                 {
                     text: 'ravid',
-                    id: 0,
-                    mark: false
+                    id: 0, mark: false
                 },
                 {
                     text: 'divar',
-                    id: 1,
-                    mark: false
+                    id: 1, mark: false
                 },
                 {
                     text: 'divad',
-                    id: 2,
-                    mark: false
+                    id: 2, mark: false
                 },
                 {
                     text: 'david',
-                    id: 3,
-                    mark: true
+                    id: 3, mark: true
                 }
             ],
             answer: 3
 
         },
-
         {
             text: "What will be the output of this code?",
             code: `var a = (2,5 - 2) * 2;
             
 alert(a);`,
             responses: [
-
                 {
                     text: '1',
-                    id: 0,
-                    mark: false
+                    id: 0, mark: false
                 },
                 {
                     text: `6`,
-                    id: 1,
-                    mark: true
+                    id: 1, mark: true
                 },
                 {
                     text: '2,5',
-                    id: 2,
-                    mark: false
+                    id: 2, mark: false
                 },
                 {
                     text: '5',
-                    id: 3,
-                    mark: false
+                    id: 3, mark: false
                 }
             ],
             answer: 1
