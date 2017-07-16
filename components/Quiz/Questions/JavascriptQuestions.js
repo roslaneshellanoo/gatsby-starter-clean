@@ -3,28 +3,28 @@ const JavascriptQuestions = {
     questions: [
 
         {
-            text: 'Чему равна переменная name',
-            code: `var name = "пупкин".replace("п", "д")`,
+            text: 'What will be the output of the variable "name" ?',
+            code: `var name = "ravid".replace("r", "d")`,
 
             responses: [
 
                 {
-                    text: 'for',
+                    text: 'ravid',
                     id: 0,
                     mark: false
                 },
                 {
-                    text: 'foo',
+                    text: 'divar',
                     id: 1,
                     mark: false
                 },
                 {
-                    text: 'bar',
+                    text: 'divad',
                     id: 2,
                     mark: false
                 },
                 {
-                    text: 'var',
+                    text: 'david',
                     id: 3,
                     mark: true
                 }
@@ -34,27 +34,29 @@ const JavascriptQuestions = {
         },
 
         {
-            text: "Which of the following is a String ?",
-
+            text: "What will be the output of this code?",
+            code: `var a = (2,5 - 2) * 2;
+            
+alert(a);`,
             responses: [
 
                 {
-                    text: '$This_is_string',
+                    text: '1',
                     id: 0,
                     mark: false
                 },
                 {
-                    text: `"This is string"`,
+                    text: `6`,
                     id: 1,
                     mark: true
                 },
                 {
-                    text: 'this is string...',
+                    text: '2,5',
                     id: 2,
                     mark: false
                 },
                 {
-                    text: '@this is string',
+                    text: '5',
                     id: 3,
                     mark: false
                 }
