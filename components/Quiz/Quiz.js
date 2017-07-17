@@ -193,7 +193,7 @@ export default class Quiz extends React.Component {
 
         return (
             <div className="row">
-                <div className='wrap-quiz col-xs-12 col-sm-9'>
+                <div className='wrap-quiz col-xs-12 col-sm-12'>
                     <div className='wrap-questions'>
                         {this.state.quiz.questions.map((question, index) => {
                             if (index === this.state.questionIndex) {
@@ -253,16 +253,21 @@ export default class Quiz extends React.Component {
                     {this.finalScore()}
 
                 </div>
-                <div className="content-sidebar col-sm-3">
-                    <LinearProgress style={{borderRadius: 0, height: '6px'}} mode="determinate" value={this.state.completed} />
+                <div className="content-sidebar">
+                    <LinearProgress
+                        style={{borderRadius: 0, height: '58px', zIndex: 56, position: 'absolute',backgroundColor: '#132a2d'}}
+                        mode="determinate" value={this.state.completed} />
                     <div className="box-row">
-                        <div className="perc-info">
-                            <span>{parseInt(this.state.completed)}%</span>
+                        <div  className="progress-text">
+                            <div>{this.props.quizTitle}</div>
+                            {/*<div>Finish the quiz to see the final results.</div>*/}
                         </div>
-                        {/*<div className="text-center"><span>Your Progress</span></div>*/}
-                        <h4 className="text-center"> STAGE {this.state.questionIndex} of {this.state.quizLength}</h4>
-                        <p>You started a {this.props.quizTitle}</p>
-                        <p>Finish the quiz to see the final results.</p>
+                        <div className="progress-info">
+                            <div className="perc-info">
+                                <span>{parseInt(this.state.completed)}%</span>
+                            </div>
+                            <span className="quiz-length text-center"> Stage {this.state.questionIndex} of {this.state.quizLength}</span>
+                        </div>
                     </div>
 
                 </div>

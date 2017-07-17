@@ -91,9 +91,13 @@ pre {
   padding: 1rem
 }
 
+.wrap-quiz-page {
+  padding-bottom: 5rem;
+}
+
 .wrap-questions, .wrap-results-questions {
   @media only screen and (min-width: 48rem) {
-    margin-right: 2rem;
+    margin-right: 0;
   }
 }
 
@@ -101,19 +105,33 @@ pre {
   color: #d0cadb;
   font-size: 14px;
   border-radius: 5px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 76;
 
   .box-row{
-    box-shadow: inset 0 2px 52px black;
-    background: #282938;
-    box-shadow: none;
-    background: rgba(240, 240, 245, 1);
     color: rgb(123, 123, 123);
+    display: flex;
+    justify-content: space-between;
+    z-index: 66;
+    position: relative;
+    color: #fff;
     .perc-info {
-      color: rgb(0, 188, 212);
-      font-size: 50px;
+      color: #fff;
+      font-size: 32px;
       text-align: center;
-      margin: 2rem 0px;
+      margin: 0;
       font-weight: 100;
+      float: right;
+    }
+    .quiz-length {
+      margin: 0 1rem;
+      letter-spacing: 2px;
+    }
+    .progress-text {
+      letter-spacing: 2px;
     }
   }
 
