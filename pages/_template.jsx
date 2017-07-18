@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { config } from 'config'
@@ -60,13 +61,13 @@ class Template extends React.Component {
                     <Paper style={style}>
                         <Menu  width={130}>
                             <Subheader>Javascript</Subheader>
-                            <MenuItem primaryText="Javascript - Beginner" />
+                            <MenuItem containerElement={<Link to="/quizes/javascript/" />} primaryText="Javascript - Beginner" />
 
                             <MenuItem primaryText="Javascript - Senior"  />
 
                             <MenuItem primaryText="Javascript - ES6/ES2015"  />
                             <Divider />
-                            <MenuItem primaryText="React.js" />
+                            <MenuItem containerElement={<Link to="/quizes/react/" />} primaryText="React.js" />
 
                             <MenuItem primaryText="Node.js" />
 
