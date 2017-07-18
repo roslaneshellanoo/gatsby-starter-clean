@@ -1,12 +1,9 @@
 import React from "react";
-import PropTypes from "prop-types";
 import {prefixLink} from "gatsby-helpers";
 import Helmet from "react-helmet";
 import {config} from "config";
-import Quiz from '../../../components/Quiz/Quiz'
-import JavascriptQuestions from '../../../components/Quiz/Questions/JavascriptQuestions'
-
-
+import Quiz from "../../../components/Quiz/Quiz";
+import JavascriptQuestions from "../../../components/Quiz/Questions/JavascriptQuestions";
 
 
 export default class ReactQuiz extends React.Component {
@@ -23,7 +20,7 @@ export default class ReactQuiz extends React.Component {
         return (
             <div className="wrap-quiz-page">
                 <Helmet title={`${config.siteTitle} | React quiz`}/>
-                <Quiz questions={this.state.quiz} quizTitle={'React Quiz'} />
+                <Quiz questions={this.state.quiz} quizTitle={'React Quiz'}/>
             </div>
         )
     }

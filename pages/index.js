@@ -6,6 +6,7 @@ import ReactImage from '../assets/code-icons/react.svg'
 import JsImage from '../assets/code-icons/js.svg'
 import PythonImage from '../assets/code-icons/python.svg'
 import NodeImage from '../assets/code-icons/nodejs.svg'
+import { observer } from 'mobx-react'
 
 export default class Index extends React.Component {
     render() {

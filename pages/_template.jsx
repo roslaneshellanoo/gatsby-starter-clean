@@ -30,13 +30,40 @@ import { rhythm } from '../utils/typography'
 
 const style = {
     display: 'inline-block',
-    margin: '4px 32px 16px 0',
+    margin: '0',
     position: 'fixed',
     height: '100%',
+    padding: '5rem 0'
 
 };
 
 class Template extends React.Component {
+
+    constructor(props) {
+        super(props)
+        this.state = {
+            open: true
+        }
+    }
+
+    toggleMenu = (event) => {
+        console.log('clicked menu')
+        this.setState({
+            open: !this.state.open
+        })
+    }
+
+    toggleClass = (event) => {
+        return this.state.open ? 'opened' : 'closed'
+    }
+    componentWillMount () {
+        let setMenuOnHome = (this.props.location.pathname !== prefixLink('/'))
+        console.log(setMenuOnHome)
+        this.setState({
+            open: setMenuOnHome
+        })
+    }
+
 
     render () {
         // if (location.pathname === prefixLink('/')) {
@@ -56,36 +83,36 @@ class Template extends React.Component {
                         { name: "keywords", content: "sample, something" },
                     ]}
                 />
-                <Header />
-                {location.pathname === prefixLink('/') ?  <Banner /> :
-                    <Paper style={style}>
-                        <Menu  width={130}>
-                            <Subheader>Javascript</Subheader>
-                            <MenuItem containerElement={<Link to="/quizes/javascript/" />} primaryText="Javascript - Beginner" />
-
-                            <MenuItem primaryText="Javascript - Senior"  />
-
-                            <MenuItem primaryText="Javascript - ES6/ES2015"  />
-                            <Divider />
-                            <MenuItem containerElement={<Link to="/quizes/react/" />} primaryText="React.js" />
-
-                            <MenuItem primaryText="Node.js" />
-
-                            <MenuItem primaryText="Python" />
-                        </Menu>
-                    </Paper>
+                <Header toggleMenu={this.toggleMenu} />
+                {location.pathname === prefixLink('/') ?
+                    <Banner /> : null
                 }
 
+                <div className={`side-nav ${this.toggleClass()}`}>
+                    <Menu  width={130}>
+                        <Subheader>Javascript</Subheader>
+                        <MenuItem containerElement={<Link to="/quizes/javascript/" />} primaryText="Javascript - Beginner" />
+
+                        <MenuItem primaryText="Javascript - Senior"  />
+
+                        <MenuItem primaryText="Javascript - ES6/ES2015"  />
+                        <Divider />
+                        <MenuItem containerElement={<Link to="/quizes/react/" />} primaryText="React.js" />
+
+                        <MenuItem primaryText="Node.js" />
+
+                        <MenuItem primaryText="Python" />
+                    </Menu>
+                </div>
 
 
-                <Container
-                    style={{
-                        maxWidth: 960,
-                        padding: `${rhythm(1)} ${rhythm(3/4)}`,
-                    }}
+                <div
+                    className={`container main-container nav-${this.toggleClass()}`}
                 >
-                    {children}
-                </Container>
+                    <div className="wrap-content">
+                        {children}
+                    </div>
+                </div>
                 {/*<Footer/>*/}
             </div>
         </MuiThemeProvider>
