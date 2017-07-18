@@ -74,7 +74,6 @@ class Template extends React.Component {
 
         return (
         <MuiThemeProvider>
-            {}
             <div className={classHome}>
                 <Helmet
                     title={config.siteTitle}
