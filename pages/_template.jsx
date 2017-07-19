@@ -13,7 +13,7 @@ import Menu from 'material-ui/Menu'
 import MenuItem from 'material-ui/MenuItem'
 import Divider from 'material-ui/Divider'
 import Subheader from 'material-ui/Subheader'
-import Spinner from '../components/Spinner'
+// import Spinner from '../components/Spinner'
 
 // Styles
 import 'flexboxgrid'
@@ -31,23 +31,23 @@ class Template extends React.Component {
     }
   }
 
-    toggleMenu = (event) => {
-      console.log('clicked menu')
-      this.setState({
-        open: !this.state.open
-      })
-    }
+  toggleMenu = (event) => {
+    console.log('clicked menu')
+    this.setState({
+      open: !this.state.open
+    })
+  }
 
-    toggleClass = (event) => {
-      return this.state.open ? 'opened' : 'closed'
-    }
-    componentWillMount () {
-      let setMenuOnHome = (this.props.location.pathname !== prefixLink('/'))
+  toggleClass = (event) => {
+    return this.state.open ? 'opened' : 'closed'
+  }
+  componentWillMount () {
+    let setMenuOnHome = (this.props.location.pathname !== prefixLink('/'))
 
-      this.setState({
-        open: setMenuOnHome
-      })
-    }
+    this.setState({
+      open: setMenuOnHome
+    })
+  }
 
   delayStateSpinner = (propGet) => {
     setTimeout(() => {
