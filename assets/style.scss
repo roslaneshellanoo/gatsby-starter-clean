@@ -363,3 +363,38 @@ pre {
   margin-right: 1rem;
   cursor: pointer;
 }
+
+
+
+
+
+@keyframes spinner {
+  100% {
+    transform: rotate(3600deg);
+  }
+}
+
+.loading-container {
+  margin: 0 auto;
+  text-align: center;
+  position: fixed;
+  top: 50vh;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  z-index: 9819485;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.84);
+}
+
+
+.loading-text {
+  position: relative;
+  z-index: 1;
+  font-size: 1.5rem;
+  margin-left: 0.5em;
+}
