@@ -6,6 +6,7 @@ import RaisedButton from 'material-ui/RaisedButton'
 import LinearProgress from 'material-ui/LinearProgress'
 import { Card, CardActions, CardTitle } from 'material-ui/Card'
 import Paper from 'material-ui/Paper'
+import shuffle from 'lodash/shuffle'
 
 const styles = {
   root: {
@@ -76,7 +77,7 @@ export default class Quiz extends React.Component {
     super(props)
     this.state = {
       completed: 0,
-      quiz: this.props.questions,
+      quiz: shuffle(this.props.questions.questions),
       quizLength: this.props.questions.questions.length,
       steps: this.props.questions.questions.map((v, i) => {
         return i + 1
@@ -93,7 +94,7 @@ export default class Quiz extends React.Component {
       let quizObj = this.state.quiz
       let quizIndex = this.state.questionIndex
       let responses = this.state.userResponses
-      if (responses[quizIndex] === quizObj.questions[quizIndex].answer) {
+      if (responses[quizIndex] === quizObj[quizIndex].answer) {
         this.setState({ score: this.state.score + 1 })
       }
       if (responses[quizIndex] !== null) {
@@ -121,7 +122,7 @@ export default class Quiz extends React.Component {
 
     restart = (e) => {
       this.setState({
-        quiz: this.props.questions,
+        quiz: this.props.questions.questions,
         quizLength: this.props.questions.questions.length,
         steps: this.props.questions.questions.map(function (v, i) {
           return i + 1
@@ -156,7 +157,7 @@ export default class Quiz extends React.Component {
             <br/>
             <br/>
             <div className='wrap-results-questions'>
-              {this.state.quiz.questions.map((question, questionIndex) =>
+              {this.state.quiz.map((question, questionIndex) =>
                 <Paper key={questionIndex} zDepth={1}>
                   <div key={questionIndex}>
                     <h4 className='results-question'>{question.text}</h4>
@@ -189,7 +190,7 @@ export default class Quiz extends React.Component {
         <div className='row'>
           <div className='wrap-quiz col-xs-12 col-sm-12'>
             <div className='wrap-questions'>
-              {this.state.quiz.questions.map((question, index) => {
+              {this.state.quiz.map((question, index) => {
                 if (index === this.state.questionIndex) {
                   return (
                     <div key={index}>
