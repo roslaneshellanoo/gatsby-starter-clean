@@ -7,6 +7,7 @@ import LinearProgress from 'material-ui/LinearProgress'
 import { Card, CardActions, CardTitle } from 'material-ui/Card'
 import Paper from 'material-ui/Paper'
 import shuffle from 'lodash/shuffle'
+import RawHtml from 'react-raw-html'
 
 const styles = {
   root: {
@@ -196,7 +197,9 @@ export default class Quiz extends React.Component {
                     <div key={index}>
 
                       <div className='que-block'>
-                        <h3 className='question-title' key={index}>{question.text}</h3>
+                        <h3 className='question-title' key={index}>
+                          <RawHtml.span>{question.text}</RawHtml.span>
+                        </h3>
                         {question.code
                           ? <pre><code>{question.code}</code></pre>
                           : null

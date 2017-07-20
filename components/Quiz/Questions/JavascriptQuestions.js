@@ -63,27 +63,27 @@ alert(a);`,
     },
 
     {
-      text: 'Question 3',
-      textcode: '',
+      text: 'Is <code> a == b </code> ?',
+      textcode: 'a == b',
       responses: [
 
         {
-          text: 'Wrong, too bad.',
+          text: 'true',
           id: 0,
           mark: false
         },
         {
-          text: 'Right2',
+          text: 'false',
           id: 1,
           mark: true
         },
         {
-          text: 'Wrong, too bad.',
+          text: 'undefined',
           id: 2,
           mark: false
         },
         {
-          text: 'Wrong, too bad.',
+          text: 'NaN',
           id: 3,
           mark: false
         }
@@ -93,26 +93,26 @@ alert(a);`,
     },
 
     {
-      text: 'Question 4',
+      text: 'What will be the output <code> "apples" > "oranges" </code> ?',
       responses: [
 
         {
-          text: 'Wrong, too bad.',
+          text: 'undefined',
           id: 0,
           mark: false
         },
         {
-          text: 'Right2',
+          text: 'false',
           id: 1,
           mark: true
         },
         {
-          text: 'Wrong, too bad.',
+          text: 'NaN',
           id: 2,
           mark: false
         },
         {
-          text: 'Wrong, too bad.',
+          text: 'true',
           id: 3,
           mark: false
         }
