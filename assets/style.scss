@@ -5,18 +5,23 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-weight: 300;
 }
+
 pre {
   color: #99876d;
 }
+
 .text-center {
   text-align: center;
 }
+
 .white {
   color: white;
 }
+
 .white-bg {
   background-color: white;
 }
+
 .logo a {
   font-size: 1.3rem;
   text-decoration: none;
@@ -38,7 +43,7 @@ pre {
   background: #fff;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   //box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 10px, rgba(0, 0, 0, 0.23) 0px 3px 10px;
-  box-shadow: 1px 5px 25px 0px rgba(46,61,73,0.2);
+  box-shadow: 1px 5px 25px 0px rgba(46, 61, 73, 0.2);
   border-radius: 5px;
   margin-bottom: 2rem;
   position: relative;
@@ -60,6 +65,7 @@ pre {
     }
   }
 }
+
 .banner {
 
   background-image: url("../assets/dive.jpg");
@@ -72,10 +78,10 @@ pre {
   flex-direction: column;
   position: relative;
   margin-top: 3.5rem;
-   h2 {
-     letter-spacing: 5px;
-     text-transform: uppercase;
-   }
+  h2 {
+    letter-spacing: 5px;
+    text-transform: uppercase;
+  }
   .particles {
     position: absolute;
     top: 0;
@@ -85,8 +91,7 @@ pre {
   }
 }
 
-
-.box,.box-first,.box-large,.box-nested,.box-row {
+.box, .box-first, .box-large, .box-nested, .box-row {
   @media only screen and (min-width: 48rem) {
     padding: 1rem
   }
@@ -115,7 +120,7 @@ pre {
   width: 100%;
   z-index: 76;
 
-  .box-row{
+  .box-row {
     color: rgb(123, 123, 123);
     display: flex;
     justify-content: space-between;
@@ -139,7 +144,6 @@ pre {
     }
   }
 
-
   @media only screen and (min-width: 48rem) {
     margin-top: 3rem;
   }
@@ -160,8 +164,9 @@ pre {
   margin: 0;
   padding-left: 224px;
   width: 100%;
-  transition: all .45s cubic-bezier(.23,1,.32,1);
+  transition: all .45s cubic-bezier(.23, 1, .32, 1);
 }
+
 .homepage .main-container {
   margin: 0;
   padding-left: inherit;
@@ -202,17 +207,13 @@ pre {
 
 }
 
-
-
-
-
 .blog-card {
   transition: box-shadow 0.3s ease;
   -webkit-transition: box-shadow 0.3s ease;
   background: #fff;
   border-radius: 3px;
   box-shadow: 0 3px 7px -3px rgba(0, 0, 0, 0.3);
-  box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
   margin: 0 auto 1.6%;
   overflow: hidden;
   position: relative;
@@ -233,6 +234,7 @@ pre {
   img {
     width: 100%;
     padding: 1rem;
+    margin: 0;
   }
 }
 
@@ -241,10 +243,12 @@ pre {
   box-sizing: border-box;
   position: relative;
 }
+
 .blog-card .description h3 {
   line-height: 1em;
   margin: 0 0 10px 0;
 }
+
 .blog-card .description h2 {
   color: #9b9b9b;
   line-height: 1.2em;
@@ -253,12 +257,14 @@ pre {
   font-weight: 400;
   margin: 1.2% 0;
 }
+
 .blog-card .description p {
   position: relative;
   margin: 0;
   padding-top: 2rem;
-  color: hsla(0,0%,0%,0.8);
+  color: hsla(0, 0%, 0%, 0.8);
 }
+
 .blog-card .description p:after {
   content: "";
   background: #00bcd4;
@@ -269,6 +275,7 @@ pre {
   top: 2px;
   left: 0;
 }
+
 .blog-card .description a {
   color: #00bcd4;
   margin-bottom: 10px;
@@ -276,7 +283,7 @@ pre {
 }
 
 .card-read-more {
-  border-top: 1px solid rgba(0,0,0,.1);
+  border-top: 1px solid rgba(0, 0, 0, .1);
   padding: 5px 0;
   a {
     text-decoration: none;
@@ -285,7 +292,6 @@ pre {
 
 @media screen and (min-width: 600px) {
   .blog-card {
-    height: 160px;
     max-width: 600px;
   }
 
@@ -331,11 +337,10 @@ pre {
   }
 }
 
-
 .side-nav {
   color: rgba(0, 0, 0, 0.87);
   background-color: rgb(255, 255, 255);
-  transition: all .45s cubic-bezier(.23,1,.32,1);
+  transition: all .45s cubic-bezier(.23, 1, .32, 1);
   box-sizing: border-box;
   font-family: Roboto, sans-serif;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -349,8 +354,8 @@ pre {
   transform: translateZ(0);
   width: 224px;
   top: 0;
+  z-index: 1745;
 }
-
 
 .side-nav.closed {
   transform: translate(-224px, 0px);
@@ -369,10 +374,6 @@ pre {
   margin-right: 1rem;
   cursor: pointer;
 }
-
-
-
-
 
 @keyframes spinner {
   100% {
@@ -397,10 +398,27 @@ pre {
   background: rgba(255, 255, 255, 0.84);
 }
 
-
 .loading-text {
   position: relative;
   z-index: 1;
   font-size: 1.5rem;
   margin-left: 0.5em;
+}
+
+.wrap-quizes-boxes {
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  .blog-card:hover {
+    cursor: inherit;
+  }
+  .quizes-list {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid rgb(224, 224, 224);
+  }
 }

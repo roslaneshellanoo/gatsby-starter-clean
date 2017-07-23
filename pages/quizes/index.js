@@ -1,24 +1,37 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+import Helmet from 'react-helmet'
 import { Link } from 'react-router'
 import { prefixLink } from 'gatsby-helpers'
 import { config } from 'config'
-import Helmet from 'react-helmet'
-import ReactImage from '../assets/code-icons/react.svg'
-import JsImage from '../assets/code-icons/js.svg'
-import PythonImage from '../assets/code-icons/python.svg'
-import NodeImage from '../assets/code-icons/nodejs.svg'
+import ReactImage from '../../assets/code-icons/react.svg'
+import JsImage from '../../assets/code-icons/js.svg'
+import PythonImage from '../../assets/code-icons/python.svg'
+import NodeImage from '../../assets/code-icons/nodejs.svg'
+import Divider from 'material-ui/Divider'
+import RaisedButton from 'material-ui/RaisedButton'
 
-export default class Index extends React.Component {
+class Quizes extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+    }
+  }
+
   render () {
     return (
       <div>
         <Helmet
+          title={`${config.siteTitle} | Quizes`}
           meta={[
-            { 'name': 'description', 'content': 'Test your code skills online and improve your knowledge by resolving simple programming quizes' },
+            { 'name': 'description', 'content': 'Choose programming language to test your code skills' },
             { 'name': 'keywords', 'content': 'quiz' },
           ]}
-          title={`${config.siteTitle} | Test your code skills`}/>
-        <div className='wrap-home-boxes'>
+        />
+
+        {/* <Link to={prefixLink('/')}>Go back to the homepage</Link> */}
+
+        <div className='wrap-quizes-boxes'>
           <div className='topper'>
             <div className='topper-title'>
               <h3>Choose Quiz</h3>
@@ -27,20 +40,43 @@ export default class Index extends React.Component {
           <div className='cards-row row'>
             <div className='col-xs-12 col-sm-6'>
               <div className='box'>
-                <Link to={prefixLink('quizes/javascript/')}>
-                  <div className='blog-card'>
-                    <div className='photo'>
+
+                <div className='blog-card'>
+                  <div className='row'>
+                    <div className='photo col-xs'>
                       <img src={JsImage} alt=''/>
                     </div>
-                    <div className='description'>
+                    <div className='description col-xs'>
                       <h3>Javascript</h3>
                       <p className='summary'>
-                                                The most popular programming language in the world
+      The most popular programming language in the world
                       </p>
-
                     </div>
                   </div>
-                </Link>
+
+                  <div className='wrap-quizes-list row text-center center-xs'>
+                    <div className='quizes-list'>
+                      <span>Javascript - Beginner</span>
+                      <RaisedButton
+                        containerElement={<Link to={prefixLink('/quizes/javascript/')} />}
+                        label='Start Quiz' />
+                    </div>
+                    <Divider />
+                    <div className='quizes-list'>
+                      <Link to={prefixLink('quizes/javascript/')}>
+                        <span>Javascript - Senior</span>
+                      </Link>
+                      <RaisedButton label='Start Quiz' />
+                    </div>
+                    <Divider />
+                    <div className='quizes-list'>
+                      <Link to={prefixLink('quizes/javascript/')}>
+                        <span>Javascript - ES6/ES2015</span>
+                      </Link>
+                      <RaisedButton label='Start Quiz' />
+                    </div>
+                  </div>
+                </div>
 
               </div>
             </div>
@@ -54,7 +90,7 @@ export default class Index extends React.Component {
                     <h3>React</h3>
                     {/* <h2>Opening a door to the future</h2> */}
                     <p className='summary'>
-                                            Popular JavaScript library for building user interfaces
+                      Popular JavaScript library for building user interfaces
                     </p>
                   </div>
                 </div>
@@ -72,7 +108,7 @@ export default class Index extends React.Component {
                     <h3>Node.js</h3>
                     {/* <h2>Opening a door to the future</h2> */}
                     <p className='summary'>
-                                            Node.js is an open-source, cross-platform JavaScript run-time environment
+                      Node.js is an open-source, cross-platform JavaScript run-time environment
                     </p>
 
                   </div>
@@ -96,21 +132,9 @@ export default class Index extends React.Component {
             </div>
           </div>
         </div>
-        <div className='home-block white-bg'>
-          <div className='row'>
-            <div className='col-xs'>
-              <div className='box'>
-                <p>Welcome to your new Gatsby site.</p>
-                <p>Now go build something great.</p>
-                <Link to={prefixLink('/about/')}>Go to page 2</Link>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusamus accusantium, aliquid amet architecto commodi consequuntur delectus earum excepturi, exercitationem magnam maiores optio praesentium quasi, repellat similique ut! Ipsam, nobis.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias architecto autem culpa cum delectus deserunt doloremque eaque eveniet, illo nobis officia perspiciatis quibusdam, quod quos sapiente sequi, totam vitae voluptatem!</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
       </div>
     )
   }
 }
+
+export default Quizes
