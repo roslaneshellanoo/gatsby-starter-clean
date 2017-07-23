@@ -39,8 +39,7 @@ class Quizes extends React.Component {
           </div>
           <div className='cards-row row'>
             <div className='col-xs-12 col-sm-6'>
-              <div className='box'>
-
+              <div className='box-quiz-block'>
                 <div className='blog-card'>
                   <div className='row'>
                     <div className='photo col-xs'>
@@ -81,53 +80,44 @@ class Quizes extends React.Component {
               </div>
             </div>
             <div className='col-xs-12 col-sm-6'>
-              <div className='box'>
+              <div className='box-quiz-block'>
                 <div className='blog-card'>
-                  <div className='photo'>
-                    <img src={ReactImage} alt=''/>
+                  <div className='row'>
+                    <div className='photo col-xs'>
+                      <img src={JsImage} alt=''/>
+                    </div>
+                    <div className='description col-xs'>
+                      <h3>Javascript</h3>
+                      <p className='summary'>
+                        The most popular programming language in the world
+                      </p>
+                    </div>
                   </div>
-                  <div className='description'>
-                    <h3>React</h3>
-                    {/* <h2>Opening a door to the future</h2> */}
-                    <p className='summary'>
-                      Popular JavaScript library for building user interfaces
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className='cards-row row'>
-            <div className='col-xs-12 col-sm-6'>
-              <div className='box'>
-                <div className='blog-card'>
-                  <div className='photo'>
-                    <img src={NodeImage} alt=''/>
-                  </div>
-                  <div className='description'>
-                    <h3>Node.js</h3>
-                    {/* <h2>Opening a door to the future</h2> */}
-                    <p className='summary'>
-                      Node.js is an open-source, cross-platform JavaScript run-time environment
-                    </p>
 
+                  <div className='wrap-quizes-list row text-center center-xs'>
+                    <div className='quizes-list'>
+                      <span>Javascript - Beginner</span>
+                      <RaisedButton
+                        containerElement={<Link to={prefixLink('/quizes/javascript/')} />}
+                        label='Start Quiz' />
+                    </div>
+                    <Divider />
+                    <div className='quizes-list'>
+                      <Link to={prefixLink('quizes/javascript/')}>
+                        <span>Javascript - Senior</span>
+                      </Link>
+                      <RaisedButton label='Start Quiz' />
+                    </div>
+                    <Divider />
+                    <div className='quizes-list'>
+                      <Link to={prefixLink('quizes/javascript/')}>
+                        <span>Javascript - ES6/ES2015</span>
+                      </Link>
+                      <RaisedButton label='Start Quiz' />
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div className='col-xs-12 col-sm-6'>
-              <div className='box'>
-                <div className='blog-card'>
-                  <div className='photo'>
-                    <img src={PythonImage} alt=''/>
-                  </div>
-                  <div className='description'>
-                    <h3>Python</h3>
-                    {/* <h2>Opening a door to the future</h2> */}
-                    <p className='summary'>Python is powerful general-purpose programming language. Friendly and easy to learn.</p>
 
-                  </div>
-                </div>
               </div>
             </div>
           </div>

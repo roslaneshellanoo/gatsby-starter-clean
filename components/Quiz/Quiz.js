@@ -161,7 +161,9 @@ export default class Quiz extends React.Component {
               {this.state.quiz.map((question, questionIndex) =>
                 <Paper key={questionIndex} zDepth={1}>
                   <div key={questionIndex}>
-                    <h4 className='results-question'>{question.text}</h4>
+                    <h4 className='results-question'>
+                      <RawHtml.span>{question.text}</RawHtml.span>
+                    </h4>
                     <ul>
                       {question.responses.map((response, index) => {
                         return (

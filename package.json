@@ -42,6 +42,7 @@
     "react-helmet": "^3.1.0",
     "react-particles": "0.0.3",
     "react-particles-js": "^1.5.0",
+    "react-raw-html": "^0.4.0",
     "react-redux": "^5.0.5",
     "react-redux-firebase": "^1.4.3",
     "react-responsive-grid": "^0.3.3",

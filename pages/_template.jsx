@@ -27,7 +27,9 @@ class Template extends React.Component {
     super(props)
     this.state = {
       open: true,
-      spinner: true
+      spinner: true,
+      windowHeight: typeof window !== 'undefined' && window.innerHeight,
+      windowWidth: typeof window !== 'undefined' && window.innerWidth
     }
   }
 
@@ -41,13 +43,6 @@ class Template extends React.Component {
   toggleClass = (event) => {
     return this.state.open ? 'opened' : 'closed'
   }
-  componentWillMount () {
-    let setMenuOnHome = (this.props.location.pathname !== prefixLink('/'))
-
-    this.setState({
-      open: setMenuOnHome
-    })
-  }
 
   delayStateSpinner = (propGet) => {
     setTimeout(() => {
@@ -57,15 +52,56 @@ class Template extends React.Component {
     }, 700)
   }
 
+  handleResize = (e) => {
+    this.setState({
+      windowHeight: window.innerHeight,
+      windowWidth: window.innerWidth
+    })
+    if (this.state.windowWidth < 768) {
+      console.log('resized!')
+      this.setState({
+        open: false
+      })
+    }
+  }
+
+  componentWillMount () {
+    let setMenuOnHome = (this.props.location.pathname !== prefixLink('/'))
+    this.setState({
+      open: setMenuOnHome
+    })
+    if (this.state.windowWidth < 768) {
+      this.setState({
+        open: false
+      })
+    }
+  }
+
+  componentWillUnmount () {
+    if (typeof window !== 'undefined') {
+      window.removeEventListener('resize', ::this.handleResize)
+    }
+  }
+
   componentDidMount () {
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', ::this.handleResize)
+    }
+
     this.delayStateSpinner()
   }
 
   componentWillReceiveProps (nextProps) {
     let setMenuOnHome = (nextProps.location.pathname !== prefixLink('/'))
-    this.setState({
-      open: setMenuOnHome,
-    })
+    if (this.state.windowWidth < 768) {
+      this.setState({
+        open: false,
+      })
+    } else {
+      this.setState({
+        open: setMenuOnHome,
+      })
+    }
     if (nextProps.location) {
       this.setState({ spinner: true }, this.delayStateSpinner())
     }

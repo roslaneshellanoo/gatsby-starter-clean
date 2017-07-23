@@ -28,7 +28,7 @@ export default class Index extends React.Component {
             <div className='col-xs-12 col-sm-6'>
               <div className='box'>
                 <Link to={prefixLink('quizes/javascript/')}>
-                  <div className='blog-card'>
+                  <div className='blog-card br-js'>
                     <div className='photo'>
                       <img src={JsImage} alt=''/>
                     </div>
@@ -46,7 +46,7 @@ export default class Index extends React.Component {
             </div>
             <div className='col-xs-12 col-sm-6'>
               <div className='box'>
-                <div className='blog-card'>
+                <div className='blog-card br-react'>
                   <div className='photo'>
                     <img src={ReactImage} alt=''/>
                   </div>
@@ -64,7 +64,7 @@ export default class Index extends React.Component {
           <div className='cards-row row'>
             <div className='col-xs-12 col-sm-6'>
               <div className='box'>
-                <div className='blog-card'>
+                <div className='blog-card br-node'>
                   <div className='photo'>
                     <img src={NodeImage} alt=''/>
                   </div>
@@ -81,7 +81,7 @@ export default class Index extends React.Component {
             </div>
             <div className='col-xs-12 col-sm-6'>
               <div className='box'>
-                <div className='blog-card'>
+                <div className='blog-card br-python'>
                   <div className='photo'>
                     <img src={PythonImage} alt=''/>
                   </div>

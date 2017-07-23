@@ -1,3 +1,8 @@
+$js: #f1dd3f;
+$react: #53c1de;
+$node: #8cc84b;
+$python: #376e9d;
+
 body {
   font-weight: 300;
 }
@@ -20,6 +25,23 @@ pre {
 
 .white-bg {
   background-color: white;
+}
+
+.rightToolbar {
+  color: red;
+}
+
+.br-js {
+  border-top: 3px solid $js;
+}
+.br-react {
+  border-top: 3px solid $react;
+}
+.br-node {
+  border-top: 3px solid $node;
+}
+.br-python {
+  border-top: 3px solid $python;
 }
 
 .logo a {
@@ -63,6 +85,9 @@ pre {
     h2 {
       margin: 0;
     }
+  }
+  a {
+    text-decoration: none;
   }
 }
 
@@ -159,6 +184,11 @@ pre {
   margin: auto;
   padding: 8rem 1rem;
 }
+.homepage {
+  .wrap-content {
+    padding: 1rem 1rem;
+  }
+}
 
 .main-container {
   margin: 0;
@@ -229,19 +259,30 @@ pre {
 }
 
 .blog-card .photo {
-  height: 200px;
+  @media only screen and (min-width: 600px) {
+    height: 200px;
+  }
   position: relative;
   img {
     width: 100%;
     padding: 1rem;
     margin: 0;
+    @media screen and (max-width: 599px) {
+      max-width: 160px;
+      margin: auto;
+      display: block;
+    }
   }
+
 }
 
 .blog-card .description {
   padding: 15px;
   box-sizing: border-box;
   position: relative;
+  @media screen and (max-width: 599px) {
+    text-align: center;
+  }
 }
 
 .blog-card .description h3 {
@@ -274,6 +315,24 @@ pre {
   position: absolute;
   top: 2px;
   left: 0;
+  @media screen and (max-width: 599px) {
+    margin: auto;
+    left: 0;
+    right: 0;
+  }
+}
+
+.blog-card.br-js .description p:after {
+  background: $js;
+}
+.blog-card.br-react .description p:after {
+  background: $react;
+}
+.blog-card.br-node .description p:after {
+  background: $node;
+}
+.blog-card.br-python .description p:after {
+  background: $python;
 }
 
 .blog-card .description a {
