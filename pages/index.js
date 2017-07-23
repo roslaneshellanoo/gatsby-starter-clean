@@ -74,7 +74,6 @@ export default class Index extends React.Component {
                     <p className='summary'>
                                             Node.js is an open-source, cross-platform JavaScript run-time environment
                     </p>
-
                   </div>
                 </div>
               </div>
