@@ -17,7 +17,13 @@ export default class JavascriptQuiz extends React.Component {
   render () {
     return (
       <div className='wrap-quiz-page'>
-        <Helmet title={`${config.siteTitle} | Javascript quiz`}/>
+        <Helmet
+          title={`${config.siteTitle} | Javascript quiz`}
+          meta={[
+            { 'name': 'description', 'content': 'Test your code skills online and improve your knowledge by resolving simple programming quizes' },
+            { 'name': 'keywords', 'content': 'quiz' },
+          ]}
+        />
         <Quiz questions={this.state.quiz} quizTitle={'Javascript Quiz'} />
       </div>
     )

@@ -1,2 +1,3 @@
 siteTitle="Quizio.io"
 linkPrefix = "/gatsby-starter-default"
+siteDescription = "Test your code skills online and improve your knowledge by resolving simple programming quizes"

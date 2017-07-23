@@ -2,15 +2,19 @@ import React from 'react'
 import { Link } from 'react-router'
 import { prefixLink } from 'gatsby-helpers'
 import { config } from 'config'
+import Helmet from 'react-helmet'
 import ReactImage from '../assets/code-icons/react.svg'
 import JsImage from '../assets/code-icons/js.svg'
 import PythonImage from '../assets/code-icons/python.svg'
 import NodeImage from '../assets/code-icons/nodejs.svg'
 
 export default class Index extends React.Component {
-  render() {
+  render () {
     return (
       <div>
+        <Helmet
+          description='dsdsadds'
+          title={`${config.siteTitle} | Test your code skills`}/>
         <div className='wrap-home-boxes'>
           <div className='topper'>
             <div className='topper-title'>
@@ -27,7 +31,6 @@ export default class Index extends React.Component {
                     </div>
                     <div className='description'>
                       <h3>Javascript</h3>
-                      {/*<h2>Opening a door to the future</h2>*/}
                       <p className='summary'>
                                                 The most popular programming language in the world
                       </p>
@@ -46,7 +49,7 @@ export default class Index extends React.Component {
                   </div>
                   <div className='description'>
                     <h3>React</h3>
-                    {/*<h2>Opening a door to the future</h2>*/}
+                    {/* <h2>Opening a door to the future</h2> */}
                     <p className='summary'>
                                             Popular JavaScript library for building user interfaces
                     </p>
@@ -64,7 +67,7 @@ export default class Index extends React.Component {
                   </div>
                   <div className='description'>
                     <h3>Node.js</h3>
-                    {/*<h2>Opening a door to the future</h2>*/}
+                    {/* <h2>Opening a door to the future</h2> */}
                     <p className='summary'>
                                             Node.js is an open-source, cross-platform JavaScript run-time environment
                     </p>
@@ -81,7 +84,7 @@ export default class Index extends React.Component {
                   </div>
                   <div className='description'>
                     <h3>Python</h3>
-                    {/*<h2>Opening a door to the future</h2>*/}
+                    {/* <h2>Opening a door to the future</h2> */}
                     <p className='summary'>Python is powerful general-purpose programming language. Friendly and easy to learn.</p>
 
                   </div>
