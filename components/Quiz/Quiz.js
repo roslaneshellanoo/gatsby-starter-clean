@@ -254,7 +254,7 @@ export default class Quiz extends React.Component {
           </div>
           <div className='content-sidebar'>
             <LinearProgress
-              style={{ borderRadius: 0, height: '58px', zIndex: 56, position: 'absolute', backgroundColor: '#273739' }}
+              style={{ borderRadius: 0, height: '58px', zIndex: 56, position: 'absolute', backgroundColor: '#2f3241' }}
               mode='determinate' value={this.state.completed} />
             <div className='box-row'>
               <div className='progress-text'>

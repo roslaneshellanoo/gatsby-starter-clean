@@ -36,6 +36,10 @@ pre {
   background-color: white;
 }
 
+.relative {
+  position: relative;
+}
+
 .rightToolbar {
   color: red;
 }
@@ -103,6 +107,7 @@ pre {
 .home-block {
   top: -3rem;
   position: relative;
+  margin-bottom: 4rem;
 }
 
 .banner {
@@ -221,6 +226,47 @@ pre {
   margin: 0;
   padding-left: inherit;
   width: inherit;
+}
+
+.home-quote:before {
+  top: 15px;
+  left: 0;
+  font-size: 72px;
+  line-height: 72px;
+  position: absolute;
+  font-family: serif;
+  content: open-quote;
+}
+
+.home-quote {
+  padding: 3rem;
+  font-size: 22px;
+  letter-spacing: 2px;
+  text-align: center;
+  line-height: 40px;
+  margin-bottom: 0;
+}
+
+.quote-author {
+  background-image: url('../assets/anton.png');
+  position: relative;
+  height: 100%;
+  background-size: cover;
+  padding: 8rem 1rem;
+  @media only screen and (min-width: 48rem) {
+    background-position: center center;
+    padding: 1rem;
+  }
+}
+
+.box.quote-author:before {
+  content: '';
+  background: rgba(255, 255, 255, 0.41);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
 }
 
 .wrap-quiz {
@@ -503,7 +549,7 @@ pre {
 }
 
 .footer {
-  background: #273739;
+  background: #2f3241;
   padding-top: 1rem;
   padding-bottom: 1rem;
   color: #fff;
@@ -528,4 +574,10 @@ pre {
 
 .footer.opened {
   padding-left: 16rem;
+}
+
+.box-shadowed {
+  border-radius: 4px;
+  background-color: #FAFAFA;
+  box-shadow: 0 25px 30px -18px rgba(0,0,0,0.28);
 }

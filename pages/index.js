@@ -7,6 +7,7 @@ import ReactImage from '../assets/code-icons/react.svg'
 import JsImage from '../assets/code-icons/js.svg'
 import PythonImage from '../assets/code-icons/python.svg'
 import NodeImage from '../assets/code-icons/nodejs.svg'
+import ListIcon from '../assets/check-mark.svg'
 
 export default class Index extends React.Component {
   render () {
@@ -95,15 +96,44 @@ export default class Index extends React.Component {
             </div>
           </div>
         </div>
-        <div className='home-block white-bg'>
+        <div className='home-block'>
           <div className='row'>
-            <div className='col-xs'>
+            <div className='col-xs-12 col-sm-4'>
+              <div className='box box-shadowed text-center'>
+                <img src={ListIcon} width={'100'} />
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+              </div>
+            </div>
+            <div className='col-xs-12 col-sm-4'>
+              <div className='box box-shadowed text-center'>
+                <img src={ListIcon} width={'100'} />
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+              </div>
+            </div>
+            <div className='col-xs-12 col-sm-4'>
+              <div className='box box-shadowed text-center'>
+                <img src={ListIcon} width={'100'} />
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className='home-block quote-block box-shadowed'>
+          <div className='row'>
+            <div className='col-xs-12 col-sm-4'>
+              <div className='box quote-author'>
+                <span>
+                  &nbsp;
+                </span>
+              </div>
+            </div>
+            <div className='col-xs-12 col-sm-8'>
               <div className='box'>
-                <p>Welcome to your new Gatsby site.</p>
-                <p>Now go build something great.</p>
-                <Link to={prefixLink('/about/')}>Go to page 2</Link>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusamus accusantium, aliquid amet architecto commodi consequuntur delectus earum excepturi, exercitationem magnam maiores optio praesentium quasi, repellat similique ut! Ipsam, nobis.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias architecto autem culpa cum delectus deserunt doloremque eaque eveniet, illo nobis officia perspiciatis quibusdam, quod quos sapiente sequi, totam vitae voluptatem!</p>
+                <blockquote className='home-quote relative'>
+                  Knowledge is of no value unless you put it into practice
+                </blockquote>
+                <span>- ANTON CHEKHOV</span>
               </div>
             </div>
           </div>
