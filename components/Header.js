@@ -6,8 +6,7 @@ import { Toolbar, ToolbarGroup } from 'material-ui/Toolbar'
 import FlatButton from 'material-ui/FlatButton'
 import ActionMenu from 'material-ui/svg-icons/navigation/menu'
 import muiThemeable from 'material-ui/styles/muiThemeable'
-import Logo from '../assets/logo10.png'
-import styles from '../assets/style.scss'
+import Logo from '../assets/baby-puzzle.svg'
 
 const style = {
   'toolbar': {
@@ -49,8 +48,9 @@ class Header extends React.Component {
               <Link to={prefixLink('/')}>
                 <img
                   src={Logo}
-                  alt=''
+                  alt='quizio logo'
                 />
+                quizio
               </Link>
             </div>
 
@@ -82,19 +82,6 @@ class Header extends React.Component {
             />
           </ToolbarGroup>
         </Toolbar>
-        {/* <Drawer open={this.state.open}> */}
-        {/* <MenuItem> */}
-        {/* <ActionMenu /> */}
-        {/* <div className="logo"> */}
-        {/* <Link to={prefixLink('/')}> */}
-        {/* <img src={Logo} alt=""/> */}
-        {/* </Link> */}
-        {/* </div> */}
-        {/* </MenuItem> */}
-
-        {/* <MenuItem>Menu Item</MenuItem> */}
-        {/* <MenuItem>Menu Item 2</MenuItem> */}
-        {/* </Drawer> */}
 
       </div>
 

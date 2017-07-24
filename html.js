@@ -33,8 +33,8 @@ module.exports = React.createClass({
           {head.title.toComponent()}
           {head.meta.toComponent()}
           <TypographyStyle typography={typography} />
-          {css}
           <GoogleFont typography={typography} />
+          {css}
         </head>
         <body>
           <div className='app' id='react-mount' dangerouslySetInnerHTML={{ __html: this.props.body }} />

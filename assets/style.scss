@@ -41,7 +41,10 @@ pre {
 }
 
 .rightToolbar {
-  color: red;
+  @media only screen and (max-width: 599px) {
+    display: none!important;
+  }
+
 }
 
 .br-js {
@@ -64,9 +67,11 @@ pre {
   display: flex;
   align-items: center;
   justify-content: center;
+  letter-spacing: 1px;
 
   img {
-    margin: 0;
+    margin: 0 1rem;
+    width: 35px;
   }
 }
 
@@ -209,7 +214,9 @@ pre {
 }
 
 .nav-opened .content-sidebar {
-  padding-left: 16rem;
+  @media only screen and (min-width: 48rem) {
+    padding-left: 16rem;
+  }
 }
 
 .wrap-content {
@@ -225,10 +232,12 @@ pre {
 
 .main-container {
   margin: 0;
-  padding-left: 224px;
   width: 100%;
   transition: all .45s cubic-bezier(.23, 1, .32, 1);
   flex: 1;
+  @media only screen and (min-width: 48rem) {
+    padding-left: 224px;
+  }
 }
 
 .homepage .main-container {
@@ -238,22 +247,35 @@ pre {
 }
 
 .home-quote:before {
-  top: 15px;
-  left: 0;
+
+  top: -14px;
+  left: -1rem;
   font-size: 72px;
   line-height: 72px;
   position: absolute;
   font-family: serif;
   content: open-quote;
+
+  @media only screen and (min-width: 48rem) {
+    left: 1rem;
+    top: 15px;
+  }
+
 }
 
 .home-quote {
-  padding: 3rem;
+  padding: 1rem;
   font-size: 22px;
   letter-spacing: 2px;
   text-align: center;
-  line-height: 40px;
   margin-bottom: 0;
+  line-height: 30px;
+
+
+  @media only screen and (min-width: 48rem) {
+    padding: 3rem ;
+    line-height: 40px;
+  }
 }
 
 .quote-author {
@@ -261,11 +283,17 @@ pre {
   position: relative;
   height: 100%;
   background-size: cover;
-  padding: 8rem 1rem;
+  padding: 6rem 9rem;
+  max-width: 80px;
+  margin: auto;
+  background-position: center center;
+
   @media only screen and (min-width: 48rem) {
     background-position: center center;
-    padding: 1rem;
+    padding: 2rem 10rem;
+    max-width: 100%;
   }
+
 }
 
 .box.quote-author:before {
@@ -587,7 +615,9 @@ pre {
 }
 
 .footer.opened {
-  padding-left: 16rem;
+  @media only screen and (min-width: 48rem) {
+    padding-left: 16rem;
+  }
 }
 
 .box-shadowed {

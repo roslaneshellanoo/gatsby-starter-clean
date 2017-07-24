@@ -1,12 +1,11 @@
 module.exports = {
+  siteMetadata: {
+    siteUrl: `http://quizio.io`,
+  },
   plugins: [
     `gatsby-plugin-sass`,
     {
-      resolve: `gatsby-plugin-nprogress`,
-      options: {
-        // Setting a color is optional.
-        color: `red`,
-      }
+      resolve: `gatsby-plugin-sitemap`
     }
   ]
 }
