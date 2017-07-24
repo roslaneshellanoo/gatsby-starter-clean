@@ -101,7 +101,7 @@ export default class Index extends React.Component {
             <div className='col-xs-12 col-sm-4'>
               <div className='box box-shadowed text-center'>
                 <img src={ListIcon} width={'100'} />
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+                <p>Solve code quizzes and improve your <strong>programming skills</strong> </p>
               </div>
             </div>
             <div className='col-xs-12 col-sm-4'>
