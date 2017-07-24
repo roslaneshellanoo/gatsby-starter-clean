@@ -8,7 +8,7 @@ import injectTapEventPlugin from 'react-tap-event-plugin'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import Header from '../components/Header'
 import Banner from '../components/Banner'
-// import Footer from '../components/Footer'
+import Footer from '../components/Footer'
 import Menu from 'material-ui/Menu'
 import MenuItem from 'material-ui/MenuItem'
 import Divider from 'material-ui/Divider'
@@ -116,7 +116,7 @@ class Template extends React.Component {
 
     return (
       <MuiThemeProvider>
-        <div className={classHome}>
+        <div className={`main-wrapper ${classHome || ''}`}>
           <Helmet
             title={config.siteTitle}
             meta={[
@@ -154,7 +154,7 @@ class Template extends React.Component {
               {children}
             </div>
           </div>
-          {/* <Footer/> */}
+          <Footer padFooter={this.toggleClass()}/>
         </div>
       </MuiThemeProvider>
 

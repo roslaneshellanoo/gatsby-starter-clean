@@ -38,7 +38,7 @@ class Quizes extends React.Component {
             </div>
           </div>
           <div className='cards-row row'>
-            <div className='col-xs-12 col-sm-6'>
+            <div className='js-col col-xs-12 col-sm-6'>
               <div className='box-quiz-block'>
                 <div className='blog-card'>
                   <div className='row'>
@@ -79,7 +79,7 @@ class Quizes extends React.Component {
 
               </div>
             </div>
-            <div className='col-xs-12 col-sm-6'>
+            <div className='react-col col-xs-12 col-sm-6'>
               <div className='box-quiz-block'>
                 <div className='blog-card'>
                   <div className='row'>
