@@ -9,6 +9,7 @@ import PythonImage from '../assets/code-icons/python.svg'
 import NodeImage from '../assets/code-icons/nodejs.svg'
 import ListIcon from '../assets/check-mark.svg'
 import LikeIcon from '../assets/like-icon.svg'
+import PuzzleIcon from '../assets/puzzle.svg'
 
 export default class Index extends React.Component {
   render () {
@@ -113,8 +114,8 @@ export default class Index extends React.Component {
             </div>
             <div className='col-xs-12 col-sm-4'>
               <div className='box box-shadowed text-center'>
-                <img src={ListIcon} width={'100'} />
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+                <img src={PuzzleIcon} width={'100'} />
+                <p><strong>Easy to use</strong> and simple <br/> programming code quizzes</p>
               </div>
             </div>
           </div>
