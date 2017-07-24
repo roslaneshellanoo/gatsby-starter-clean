@@ -108,6 +108,14 @@ pre {
   top: -3rem;
   position: relative;
   margin-bottom: 4rem;
+
+  img {
+    margin: 1rem 1rem 2rem 1rem;
+  }
+}
+
+.home-block.quote-block {
+  background: rgba(215, 226, 228, 0.59);
 }
 
 .banner {
@@ -261,7 +269,7 @@ pre {
 
 .box.quote-author:before {
   content: '';
-  background: rgba(255, 255, 255, 0.41);
+  background: rgba(255, 255, 255, 0.14);
   top: 0;
   left: 0;
   right: 0;

@@ -133,7 +133,7 @@ export default class Index extends React.Component {
                 <blockquote className='home-quote relative'>
                   Knowledge is of no value unless you put it into practice
                 </blockquote>
-                <span>- ANTON CHEKHOV</span>
+                <div className='text-center'>ANTON CHEKHOV</div>
               </div>
             </div>
           </div>
