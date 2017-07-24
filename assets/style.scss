@@ -115,7 +115,8 @@ pre {
 }
 
 .home-block.quote-block {
-  background: rgba(215, 226, 228, 0.59);
+  // background: rgba(215, 226, 228, 0.59);
+  background: #fff;
 }
 
 .banner {
@@ -256,7 +257,7 @@ pre {
 }
 
 .quote-author {
-  background-image: url('../assets/anton.png');
+  background-image: url('../assets/anton-draw.jpg');
   position: relative;
   height: 100%;
   background-size: cover;
@@ -276,6 +277,11 @@ pre {
   bottom: 0;
   position: absolute;
 }
+
+.author-name {
+   letter-spacing: 1px;
+   font-size: 14px;
+ }
 
 .wrap-quiz {
   margin-top: 0;
