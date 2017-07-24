@@ -8,6 +8,7 @@ import JsImage from '../assets/code-icons/js.svg'
 import PythonImage from '../assets/code-icons/python.svg'
 import NodeImage from '../assets/code-icons/nodejs.svg'
 import ListIcon from '../assets/check-mark.svg'
+import LikeIcon from '../assets/like-icon.svg'
 
 export default class Index extends React.Component {
   render () {
@@ -106,8 +107,8 @@ export default class Index extends React.Component {
             </div>
             <div className='col-xs-12 col-sm-4'>
               <div className='box box-shadowed text-center'>
-                <img src={ListIcon} width={'100'} />
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+                <img src={LikeIcon} width={'100'} />
+                <p>Completely <strong>Free of charge</strong> <br/> without registration and signup</p>
               </div>
             </div>
             <div className='col-xs-12 col-sm-4'>
