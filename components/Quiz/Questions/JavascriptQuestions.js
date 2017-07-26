@@ -119,7 +119,76 @@ alert(a);`,
       ],
       answer: 1
 
-    }
+    },
+
+    {
+      text: 'What will be the output of this code ?',
+      code: `
+console.log( 20e-1['toString'](2) );
+      `,
+      responses: [
+
+        {
+          text: '20',
+          id: 0,
+          mark: false
+        },
+        {
+          text: '10',
+          id: 1,
+          mark: true
+        },
+        {
+          text: '2',
+          id: 2,
+          mark: false
+        },
+        {
+          text: 'NaN',
+          id: 3,
+          mark: false
+        }
+      ],
+      answer: 1
+
+    },
+
+    {
+      text: 'What will be the output of this code ?',
+      code: `
+let Numbers = {
+  "0": 1,
+  0: 2
+};
+
+console.log( Numbers["0"] + Numbers[0] )
+      `,
+      responses: [
+
+        {
+          text: '20',
+          id: 0,
+          mark: false
+        },
+        {
+          text: '3',
+          id: 1,
+          mark: false
+        },
+        {
+          text: '2',
+          id: 2,
+          mark: false
+        },
+        {
+          text: '4',
+          id: 3,
+          mark: true
+        }
+      ],
+      answer: 1
+
+    },
 
   ]
 }

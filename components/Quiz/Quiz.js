@@ -148,7 +148,9 @@ export default class Quiz extends React.Component {
                 titleStyle={{ color: 'white', fontSize: '46px', marginBottom: '1rem' }}
                 subtitleStyle={{ color: 'white', letterSpacing: '2px' }}
                 title={`${parseInt(this.state.score * scorePercent)}%`}
-                subtitle={`Your Score`} />
+                subtitle={`Your Score`} >
+                <span className='white'>{this.state.score} / {this.state.quizLength}</span>
+              </CardTitle>
               <CardActions style={{ padding: '1rem' }}>
                 <div className='text-center'>
                   <RaisedButton onTouchTap={this.restart} label='Restart Quiz' />
@@ -203,7 +205,7 @@ export default class Quiz extends React.Component {
                           <RawHtml.span>{question.text}</RawHtml.span>
                         </h3>
                         {question.code
-                          ? <pre><code>{question.code}</code></pre>
+                          ? <pre><code>{question.code.trim()}</code></pre>
                           : null
                         }
                       </div>
@@ -253,9 +255,12 @@ export default class Quiz extends React.Component {
 
           </div>
           <div className='content-sidebar'>
-            <LinearProgress
-              style={{ borderRadius: 0, height: '58px', zIndex: 56, position: 'absolute', backgroundColor: '#2f3241' }}
-              mode='determinate' value={this.state.completed} />
+            <div className='stepper relative'>
+              <LinearProgress
+                style={{ borderRadius: 0, height: '58px', zIndex: 56, position: 'absolute', backgroundColor: '#2f3241' }}
+                mode='determinate' value={this.state.completed} />
+            </div>
+
             <div className='box-row'>
               <div className='progress-text'>
                 <div>{this.props.quizTitle}</div>

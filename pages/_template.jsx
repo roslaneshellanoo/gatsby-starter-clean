@@ -155,6 +155,7 @@ class Template extends React.Component {
             </div>
           </div>
           <Footer padFooter={this.toggleClass()}/>
+
         </div>
       </MuiThemeProvider>
 

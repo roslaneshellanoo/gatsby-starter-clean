@@ -21,7 +21,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 pre {
-  color: #99876d;
+  color: #905;
+  background: #f5f2f0;
 }
 
 .text-center {
@@ -177,7 +178,7 @@ pre {
   left: 0;
   width: 100%;
   z-index: 76;
-  transition: all .45s cubic-bezier(.23, 1, .32, 1);
+  transition: all .3s cubic-bezier(.23, 1, .32, 1);
 
   .box-row {
     color: rgb(123, 123, 123);
@@ -215,7 +216,7 @@ pre {
 
 .nav-opened .content-sidebar {
   @media only screen and (min-width: 48rem) {
-    padding-left: 16rem;
+    padding-left: 14rem;
   }
 }
 
@@ -233,7 +234,7 @@ pre {
 .main-container {
   margin: 0;
   width: 100%;
-  transition: all .45s cubic-bezier(.23, 1, .32, 1);
+  transition: all .3s cubic-bezier(.23, 1, .32, 1);
   flex: 1;
   @media only screen and (min-width: 48rem) {
     padding-left: 224px;
@@ -475,8 +476,8 @@ pre {
     float: right;
   }
   .blog-card .photo {
-    transition: all 0.5s ease;
-    -webkit-transition: all 0.5s ease;
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
     float: left;
     height: 100%;
     width: 40%;
@@ -507,7 +508,7 @@ pre {
 .side-nav {
   color: rgba(0, 0, 0, 0.87);
   background-color: rgb(255, 255, 255);
-  transition: all .45s cubic-bezier(.23, 1, .32, 1);
+  transition: all .3s cubic-bezier(.23, 1, .32, 1);
   box-sizing: border-box;
   font-family: Roboto, sans-serif;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -592,10 +593,10 @@ pre {
 
 .footer {
   background: #2f3241;
-  padding-top: 1rem;
+  padding-top: 0.78rem;
   padding-bottom: 1rem;
   color: #fff;
-  transition: all 0.45s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
   width: 100%;
   a {
     color: #fff;
