@@ -78,7 +78,7 @@ class Header extends React.Component {
                 style={style.link}
                 to='/quizes/javascript/'
               />}
-              label={'Javascript'}
+              label={'Blog'}
             />
           </ToolbarGroup>
         </Toolbar>
