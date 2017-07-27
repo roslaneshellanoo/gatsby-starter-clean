@@ -18,12 +18,14 @@ const style = {
     'width': '100%',
     'zIndex': 1756
   },
-  'link': { 'margin': '10px 15px', },
+  'link': { 'margin': '10px 10px', },
   'label': {
-    'fontSize': '15px',
+    'fontSize': '13px',
     'fontWeight': 300,
     'textTransform': 'none',
-    'letterSpacing': '1px'
+    'letterSpacing': '1px',
+    'color': '#707070',
+    'padding': '0 5px'
   }
 }
 class Header extends React.Component {
