@@ -221,15 +221,15 @@ export default class Quiz extends React.Component {
                             primaryText={response.text}
                             leftAvatar={
                               <Avatar
-                                color={'#ffffff'} backgroundColor={'#00bcd4'}
+                                color={'#00bcd4'} backgroundColor={'transparent'}
                                 style={{
                                   left: 8,
-                                  top: 16,
+                                  top: 18,
                                   border: '1px solid #00bcd4',
-                                  fontSize: '14px',
+                                  fontSize: '12px',
                                   fontWeight: 300,
-                                  width: '25px',
-                                  height: '25px'
+                                  width: '20px',
+                                  height: '20px'
                                 }}
                               >
                                 {index + 1 }

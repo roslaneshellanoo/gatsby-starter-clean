@@ -20,6 +20,16 @@ import 'flexboxgrid'
 import '../assets/style.scss'
 import '../css/markdown-styles'
 
+const style = {
+  menuItem: {
+    fontSize: '14px',
+    color: 'rgb(112, 112, 112)'
+  },
+  subheader: {
+    fontSize: '12px'
+  }
+}
+
 injectTapEventPlugin()
 
 class Template extends React.Component {
@@ -132,18 +142,18 @@ class Template extends React.Component {
 
           <div className={`side-nav ${this.toggleClass()}`}>
             <Menu width={130}>
-              <Subheader>Javascript</Subheader>
-              <MenuItem containerElement={<Link to='/quizes/javascript/' />} primaryText='Javascript - Beginner' />
+              <Subheader style={style.subheader}>Javascript</Subheader>
+              <MenuItem style={style.menuItem} containerElement={<Link to='/quizes/javascript/' />} primaryText='Javascript - Beginner' />
 
-              <MenuItem primaryText='Javascript - Senior' />
+              <MenuItem style={style.menuItem} primaryText='Javascript - Senior' />
 
-              <MenuItem primaryText='Javascript - ES6/ES2015' />
+              <MenuItem style={style.menuItem} primaryText='Javascript - ES6/ES2015' />
               <Divider />
-              <MenuItem containerElement={<Link to='/quizes/react/' />} primaryText='React.js' />
+              <MenuItem style={style.menuItem} containerElement={<Link to='/quizes/react/' />} primaryText='React.js' />
 
-              <MenuItem primaryText='Node.js' />
+              <MenuItem style={style.menuItem} primaryText='Node.js' />
 
-              <MenuItem primaryText='Python' />
+              <MenuItem style={style.menuItem} primaryText='Python' />
             </Menu>
           </div>
 

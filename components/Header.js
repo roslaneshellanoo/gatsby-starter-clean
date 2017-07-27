@@ -48,11 +48,7 @@ class Header extends React.Component {
 
             <div className='logo'>
               <Link to={prefixLink('/')}>
-                <img
-                  src={Logo}
-                  alt='quizio logo'
-                />
-                quizio
+                Quizio
               </Link>
             </div>
 

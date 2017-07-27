@@ -13,6 +13,12 @@ const options = {
         '400',
         '600'
       ]
+    },
+    {
+      name: 'Emblema One',
+      styles: [
+        '400',
+      ]
     }
   ],
   headerFontFamily: ['Roboto', 'sans-serif'],
