@@ -135,6 +135,9 @@ export default class Quiz extends React.Component {
         completed: 0
       })
     }
+    buttonState = () => {
+      return 'disabled'
+    }
 
     finalScore = () => {
       let scorePercent = 100 / this.state.quizLength
@@ -244,9 +247,14 @@ export default class Quiz extends React.Component {
               })}
             </div>
             <div>
+              {/* { */}
+              {/* this.state.userResponses[this.state.questionIndex] === null */}
+              {/* ? 'disabled' */}
+              {/*: null */}
+              {/* } */}
 
               { this.state.questionIndex < this.state.quizLength
-                ? <RaisedButton onTouchTap={this.handleNext} label='Next' primary/>
+                ? <RaisedButton onTouchTap={this.handleNext} label='Next' primary />
                 : null
               }
             </div>
